@@ -1,0 +1,177 @@
+{
+  "period": "2024-Q4",
+  "currency": "USD",
+  "lines": [
+    {
+      "code": "4100",
+      "name": "Product Revenue",
+      "type": "Revenue",
+      "value": 28500000.0
+    },
+    {
+      "code": "4110",
+      "name": "Service Revenue",
+      "type": "Revenue",
+      "value": 6200000.0
+    },
+    {
+      "code": "4200",
+      "name": "Sales Returns and Allowances",
+      "type": "Revenue",
+      "value": -340000.0
+    },
+    {
+      "code": "4300",
+      "name": "Other Operating Revenue",
+      "type": "Revenue",
+      "value": 125000.0
+    },
+    {
+      "code": "5100",
+      "name": "COGS - Materials",
+      "type": "Expense",
+      "value": 9800000.0
+    },
+    {
+      "code": "5110",
+      "name": "COGS - Direct Labor",
+      "type": "Expense",
+      "value": 4200000.0
+    },
+    {
+      "code": "5120",
+      "name": "COGS - Manufacturing Overhead",
+      "type": "Expense",
+      "value": 2650000.0
+    },
+    {
+      "code": "6100",
+      "name": "Salaries and Wages",
+      "type": "Expense",
+      "value": 6250000.0
+    },
+    {
+      "code": "6110",
+      "name": "Employee Benefits",
+      "type": "Expense",
+      "value": 920000.0
+    },
+    {
+      "code": "6120",
+      "name": "Payroll Taxes",
+      "type": "Expense",
+      "value": 410000.0
+    },
+    {
+      "code": "6200",
+      "name": "Rent Expense",
+      "type": "Expense",
+      "value": 480000.0
+    },
+    {
+      "code": "6210",
+      "name": "Utilities",
+      "type": "Expense",
+      "value": 115000.0
+    },
+    {
+      "code": "6220",
+      "name": "Office Supplies",
+      "type": "Expense",
+      "value": 62000.0
+    },
+    {
+      "code": "6300",
+      "name": "Marketing and Advertising",
+      "type": "Expense",
+      "value": 980000.0
+    },
+    {
+      "code": "6310",
+      "name": "Travel and Entertainment",
+      "type": "Expense",
+      "value": 283500.0
+    },
+    {
+      "code": "6400",
+      "name": "Professional Fees",
+      "type": "Expense",
+      "value": 595000.0
+    },
+    {
+      "code": "6410",
+      "name": "Insurance",
+      "type": "Expense",
+      "value": 180000.0
+    },
+    {
+      "code": "6500",
+      "name": "Depreciation Expense",
+      "type": "Expense",
+      "value": 1065000.0
+    },
+    {
+      "code": "6510",
+      "name": "Amortization Expense",
+      "type": "Expense",
+      "value": 220000.0
+    },
+    {
+      "code": "6600",
+      "name": "Bad Debt Expense",
+      "type": "Expense",
+      "value": 140000.0
+    },
+    {
+      "code": "6900",
+      "name": "Other Operating Expenses",
+      "type": "Expense",
+      "value": 140000.0
+    },
+    {
+      "code": "7100",
+      "name": "Interest Income",
+      "type": "Revenue",
+      "value": 62000.0
+    },
+    {
+      "code": "7200",
+      "name": "Interest Expense",
+      "type": "Expense",
+      "value": 410000.0
+    },
+    {
+      "code": "7300",
+      "name": "FX Gain/Loss - Realized",
+      "type": "Expense",
+      "value": 85000.0
+    },
+    {
+      "code": "7310",
+      "name": "FX Gain/Loss - Unrealized",
+      "type": "Expense",
+      "value": -53200.0
+    },
+    {
+      "code": "7400",
+      "name": "Gain/Loss on Disposal of Assets",
+      "type": "Expense",
+      "value": -18000.0
+    },
+    {
+      "code": "8100",
+      "name": "Current Tax Expense",
+      "type": "Expense",
+      "value": 680000.0
+    },
+    {
+      "code": "8200",
+      "name": "Deferred Tax Expense",
+      "type": "Expense",
+      "value": 158000.0
+    }
+  ],
+  "total_revenue": 34547000.0,
+  "total_expenses": 29752300.0,
+  "net_income": 4794700.0
+}

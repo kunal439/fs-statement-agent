@@ -1,0 +1,111 @@
+======================================================================
+FINANCIAL STATEMENT PIPELINE — 2024-Q4
+======================================================================
+
+Loaded: 72 COA accounts, 62 TB rows, 7 FX rates, 10 JEs
+
+--- STEP 1: COA Mapping ---
+  MAPPED: 1110 -> 1110 (conf 1.0)
+  MAPPED: 1120 -> 1120 (conf 1.0)
+  MAPPED: 1121 -> 1121 (conf 1.0)
+  MAPPED: 1130 -> 1130 (conf 1.0)
+  MAPPED: 1131 -> 1131 (conf 1.0)
+  MAPPED: 1140 -> 1140 (conf 1.0)
+  MAPPED: 1150 -> 1150 (conf 1.0)
+  MAPPED: 1210 -> 1210 (conf 1.0)
+  MAPPED: 1211 -> 1211 (conf 1.0)
+  MAPPED: 1220 -> 1220 (conf 1.0)
+  MAPPED: 1221 -> 1221 (conf 1.0)
+  MAPPED: 1230 -> 1230 (conf 1.0)
+  MAPPED: 1240 -> 1240 (conf 1.0)
+  MAPPED: 1250 -> 1250 (conf 1.0)
+  MAPPED: 2110 -> 2110 (conf 1.0)
+  MAPPED: 2120 -> 2120 (conf 1.0)
+  MAPPED: 2130 -> 2130 (conf 1.0)
+  MAPPED: 2140 -> 2140 (conf 1.0)
+  MAPPED: 2150 -> 2150 (conf 1.0)
+  MAPPED: 2160 -> 2160 (conf 1.0)
+  MAPPED: 2170 -> 2170 (conf 1.0)
+  MAPPED: 2210 -> 2210 (conf 1.0)
+  MAPPED: 2220 -> 2220 (conf 1.0)
+  MAPPED: 2230 -> 2230 (conf 1.0)
+  MAPPED: 2240 -> 2240 (conf 1.0)
+  MAPPED: 3100 -> 3100 (conf 1.0)
+  MAPPED: 3110 -> 3110 (conf 1.0)
+  MAPPED: 3200 -> 3200 (conf 1.0)
+  MAPPED: 3310 -> 3310 (conf 1.0)
+  MAPPED: 3400 -> 3400 (conf 1.0)
+  MAPPED: 4100 -> 4100 (conf 1.0)
+  MAPPED: 4110 -> 4110 (conf 1.0)
+  MAPPED: 4200 -> 4200 (conf 1.0)
+  MAPPED: 4300 -> 4300 (conf 1.0)
+  MAPPED: 5100 -> 5100 (conf 1.0)
+  MAPPED: 5110 -> 5110 (conf 1.0)
+  MAPPED: 5120 -> 5120 (conf 1.0)
+  MAPPED: 6100 -> 6100 (conf 1.0)
+  MAPPED: 6110 -> 6110 (conf 1.0)
+  MAPPED: 6120 -> 6120 (conf 1.0)
+  MAPPED: 6200 -> 6200 (conf 1.0)
+  MAPPED: 6210 -> 6210 (conf 1.0)
+  MAPPED: 6220 -> 6220 (conf 1.0)
+  MAPPED: 6300 -> 6300 (conf 1.0)
+  MAPPED: 6310 -> 6310 (conf 1.0)
+  MAPPED: 6400 -> 6400 (conf 1.0)
+  MAPPED: 6410 -> 6410 (conf 1.0)
+  MAPPED: 6500 -> 6500 (conf 1.0)
+  MAPPED: 6510 -> 6510 (conf 1.0)
+  MAPPED: 6600 -> 6600 (conf 1.0)
+  MAPPED: 6900 -> 6900 (conf 1.0)
+  MAPPED: 7100 -> 7100 (conf 1.0)
+  MAPPED: 7200 -> 7200 (conf 1.0)
+  MAPPED: 7300 -> 7300 (conf 1.0)
+  MAPPED: 7310 -> 7310 (conf 1.0)
+  MAPPED: 7400 -> 7400 (conf 1.0)
+  MAPPED: 8100 -> 8100 (conf 1.0)
+  MAPPED: 8200 -> 8200 (conf 1.0)
+  REVIEW: 9999 -> 7310 (conf 0.455)
+
+--- STEP 2: FX Translation ---
+  FX-1110-EUR: Rate 1.095 (exact): OK
+  FX-1110-GBP: Rate 1.251 (fallback_opening): No period_end for GBP; used opening rate
+
+--- STEP 3: Adjustment Validation ---
+  Accepted: 7
+  Rejected: 2
+  Quarantined: 1
+
+  REJECTED JE-002: Reclassify marketing spend wrongly booked to T&E
+    -> Debits (28,500.00) != Credits (25,000.00). Difference: 3,500.00.
+    -> Note: 6310 (Travel and Entertainment) has Debit normal balance but is credited. Verify this is intentional.
+
+  REJECTED JE-008: Intercompany settlement — UK sub
+    -> Circular entry: account 2170 is both debited and credited for the same amount. Net economic effect is zero.
+    -> Note: 2170 (Intercompany Payable) has Credit normal balance but is debited. Verify this is intentional.
+
+  QUARANTINED JE-005: Reclass conference travel from old code
+    -> Account 6315 not in COA. Cannot post until mapped.
+    -> Note: 6310 (Travel and Entertainment) has Debit normal balance but is credited. Verify this is intentional.
+
+--- STEP 4: Posting Adjustments ---
+
+--- STEP 5: Building Statements ---
+
+  Balance Sheet:
+    Total Assets:        47,479,400.30
+    Total Liabilities:   18,770,000.00
+    Total Equity:        17,294,700.00
+    A - (L+E):           11,414,700.30
+
+  P&L:
+    Revenue:       34,547,000.00
+    Expenses:      29,752,300.00
+    Net Income:     4,794,700.00
+
+--- STEP 6: Verification ---
+  [!!] Balance Sheet Identity: FAIL
+       Delta: 11414700.3
+       Action: Assets != Liabilities + Equity. This residual equals the unresolved TB imbalance after excluding orphan accounts and FX gaps. Investigate the row-level exceptions.
+  [OK] P&L Identity: PASS
+  [!!] TB Debits = Credits: FAIL
+       Delta: 177100.3
+       Action: Trial balance out of balance after adjustments. Check rejected JEs, orphan accounts, and FX translation gaps.

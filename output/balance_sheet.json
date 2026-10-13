@@ -1,0 +1,163 @@
+{
+  "period": "2024-Q4",
+  "currency": "USD",
+  "assets": [
+    {
+      "code": "1110",
+      "name": "Cash and Cash Equivalents",
+      "value": 5680800.3
+    },
+    {
+      "code": "1120",
+      "name": "Accounts Receivable",
+      "value": 6180500.0
+    },
+    {
+      "code": "1121",
+      "name": "Allowance for Doubtful Accounts",
+      "value": 230000.0
+    },
+    {
+      "code": "1130",
+      "name": "Inventory - Raw Materials",
+      "value": 1920000.0
+    },
+    {
+      "code": "1131",
+      "name": "Inventory - Finished Goods",
+      "value": 3410000.0
+    },
+    {
+      "code": "1140",
+      "name": "Prepaid Expenses",
+      "value": 245000.0
+    },
+    {
+      "code": "1150",
+      "name": "Other Current Assets",
+      "value": 78400.0
+    },
+    {
+      "code": "1210",
+      "name": "Property, Plant & Equipment - Cost",
+      "value": 17007700.0
+    },
+    {
+      "code": "1211",
+      "name": "Accumulated Depreciation - PPE",
+      "value": 4415000.0
+    },
+    {
+      "code": "1220",
+      "name": "Intangible Assets - Cost",
+      "value": 2800000.0
+    },
+    {
+      "code": "1221",
+      "name": "Accumulated Amortization",
+      "value": 980000.0
+    },
+    {
+      "code": "1230",
+      "name": "Goodwill",
+      "value": 3500000.0
+    },
+    {
+      "code": "1240",
+      "name": "Long-term Investments",
+      "value": 750000.0
+    },
+    {
+      "code": "1250",
+      "name": "Deferred Tax Asset",
+      "value": 282000.0
+    }
+  ],
+  "liabilities": [
+    {
+      "code": "2110",
+      "name": "Accounts Payable",
+      "value": 2840000.0
+    },
+    {
+      "code": "2120",
+      "name": "Accrued Expenses",
+      "value": 2075000.0
+    },
+    {
+      "code": "2130",
+      "name": "Short-term Debt",
+      "value": 1500000.0
+    },
+    {
+      "code": "2140",
+      "name": "Current Portion of Long-term Debt",
+      "value": 1000000.0
+    },
+    {
+      "code": "2150",
+      "name": "Income Tax Payable",
+      "value": 420000.0
+    },
+    {
+      "code": "2160",
+      "name": "Deferred Revenue",
+      "value": 680000.0
+    },
+    {
+      "code": "2170",
+      "name": "Intercompany Payable",
+      "value": 1240000.0
+    },
+    {
+      "code": "2210",
+      "name": "Long-term Debt",
+      "value": 6300000.0
+    },
+    {
+      "code": "2220",
+      "name": "Lease Liability - Long-term",
+      "value": 1320000.0
+    },
+    {
+      "code": "2230",
+      "name": "Deferred Tax Liability",
+      "value": 485000.0
+    },
+    {
+      "code": "2240",
+      "name": "Pension Obligations",
+      "value": 910000.0
+    }
+  ],
+  "equity": [
+    {
+      "code": "3100",
+      "name": "Common Stock",
+      "value": 1000000.0
+    },
+    {
+      "code": "3110",
+      "name": "Additional Paid-in Capital",
+      "value": 4500000.0
+    },
+    {
+      "code": "3200",
+      "name": "Retained Earnings",
+      "value": 12034700.0
+    },
+    {
+      "code": "3310",
+      "name": "FX Translation Reserve",
+      "value": 180000.0
+    },
+    {
+      "code": "3400",
+      "name": "Treasury Stock",
+      "value": -420000.0
+    }
+  ],
+  "total_assets": 47479400.3,
+  "total_liabilities": 18770000.0,
+  "total_equity": 17294700.0
+}

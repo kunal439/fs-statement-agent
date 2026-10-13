@@ -1,0 +1,490 @@
+{
+  "1110": {
+    "account_code": "1110",
+    "suggested_coa_code": "1110",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "1120": {
+    "account_code": "1120",
+    "suggested_coa_code": "1120",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "1121": {
+    "account_code": "1121",
+    "suggested_coa_code": "1121",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "1130": {
+    "account_code": "1130",
+    "suggested_coa_code": "1130",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "1131": {
+    "account_code": "1131",
+    "suggested_coa_code": "1131",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "1140": {
+    "account_code": "1140",
+    "suggested_coa_code": "1140",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "1150": {
+    "account_code": "1150",
+    "suggested_coa_code": "1150",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "1210": {
+    "account_code": "1210",
+    "suggested_coa_code": "1210",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "1211": {
+    "account_code": "1211",
+    "suggested_coa_code": "1211",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "1220": {
+    "account_code": "1220",
+    "suggested_coa_code": "1220",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "1221": {
+    "account_code": "1221",
+    "suggested_coa_code": "1221",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "1230": {
+    "account_code": "1230",
+    "suggested_coa_code": "1230",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "1240": {
+    "account_code": "1240",
+    "suggested_coa_code": "1240",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "1250": {
+    "account_code": "1250",
+    "suggested_coa_code": "1250",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "2110": {
+    "account_code": "2110",
+    "suggested_coa_code": "2110",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "2120": {
+    "account_code": "2120",
+    "suggested_coa_code": "2120",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "2130": {
+    "account_code": "2130",
+    "suggested_coa_code": "2130",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "2140": {
+    "account_code": "2140",
+    "suggested_coa_code": "2140",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "2150": {
+    "account_code": "2150",
+    "suggested_coa_code": "2150",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "2160": {
+    "account_code": "2160",
+    "suggested_coa_code": "2160",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "2170": {
+    "account_code": "2170",
+    "suggested_coa_code": "2170",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "2210": {
+    "account_code": "2210",
+    "suggested_coa_code": "2210",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "2220": {
+    "account_code": "2220",
+    "suggested_coa_code": "2220",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "2230": {
+    "account_code": "2230",
+    "suggested_coa_code": "2230",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "2240": {
+    "account_code": "2240",
+    "suggested_coa_code": "2240",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "3100": {
+    "account_code": "3100",
+    "suggested_coa_code": "3100",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "3110": {
+    "account_code": "3110",
+    "suggested_coa_code": "3110",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "3200": {
+    "account_code": "3200",
+    "suggested_coa_code": "3200",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "3310": {
+    "account_code": "3310",
+    "suggested_coa_code": "3310",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "3400": {
+    "account_code": "3400",
+    "suggested_coa_code": "3400",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "4100": {
+    "account_code": "4100",
+    "suggested_coa_code": "4100",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "4110": {
+    "account_code": "4110",
+    "suggested_coa_code": "4110",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "4200": {
+    "account_code": "4200",
+    "suggested_coa_code": "4200",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "4300": {
+    "account_code": "4300",
+    "suggested_coa_code": "4300",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "5100": {
+    "account_code": "5100",
+    "suggested_coa_code": "5100",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "5110": {
+    "account_code": "5110",
+    "suggested_coa_code": "5110",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "5120": {
+    "account_code": "5120",
+    "suggested_coa_code": "5120",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "6100": {
+    "account_code": "6100",
+    "suggested_coa_code": "6100",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "6110": {
+    "account_code": "6110",
+    "suggested_coa_code": "6110",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "6120": {
+    "account_code": "6120",
+    "suggested_coa_code": "6120",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "6200": {
+    "account_code": "6200",
+    "suggested_coa_code": "6200",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "6210": {
+    "account_code": "6210",
+    "suggested_coa_code": "6210",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "6220": {
+    "account_code": "6220",
+    "suggested_coa_code": "6220",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "6300": {
+    "account_code": "6300",
+    "suggested_coa_code": "6300",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "6310": {
+    "account_code": "6310",
+    "suggested_coa_code": "6310",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "6400": {
+    "account_code": "6400",
+    "suggested_coa_code": "6400",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "6410": {
+    "account_code": "6410",
+    "suggested_coa_code": "6410",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "6500": {
+    "account_code": "6500",
+    "suggested_coa_code": "6500",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "6510": {
+    "account_code": "6510",
+    "suggested_coa_code": "6510",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "6600": {
+    "account_code": "6600",
+    "suggested_coa_code": "6600",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "6900": {
+    "account_code": "6900",
+    "suggested_coa_code": "6900",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "7100": {
+    "account_code": "7100",
+    "suggested_coa_code": "7100",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "7200": {
+    "account_code": "7200",
+    "suggested_coa_code": "7200",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "7300": {
+    "account_code": "7300",
+    "suggested_coa_code": "7300",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "7310": {
+    "account_code": "7310",
+    "suggested_coa_code": "7310",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "7400": {
+    "account_code": "7400",
+    "suggested_coa_code": "7400",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "8100": {
+    "account_code": "8100",
+    "suggested_coa_code": "8100",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "8200": {
+    "account_code": "8200",
+    "suggested_coa_code": "8200",
+    "confidence": 1.0,
+    "reasoning": "Exact code match in COA.",
+    "alternatives": [],
+    "requires_human": false
+  },
+  "9999": {
+    "account_code": "9999",
+    "suggested_coa_code": "7310",
+    "confidence": 0.455,
+    "reasoning": "'Suspense - Unmapped' best matches COA 'FX Gain/Loss - Unrealized' (code 7310) with name similarity 0.45.",
+    "alternatives": [
+      {
+        "code": "1211",
+        "name": "Accumulated Depreciation - PPE",
+        "score": 0.408
+      },
+      {
+        "code": "5100",
+        "name": "COGS - Materials",
+        "score": 0.4
+      },
+      {
+        "code": "7300",
+        "name": "FX Gain/Loss - Realized",
+        "score": 0.381
+      }
+    ],
+    "requires_human": true
+  }
+}

@@ -1,0 +1,25 @@
+[
+  {
+    "check": "Balance Sheet Identity",
+    "status": "FAIL",
+    "expected": 47479400.3,
+    "actual": 36064700.0,
+    "delta": 11414700.3,
+    "severity": "HIGH",
+    "suggested_action": "Assets != Liabilities + Equity. This residual equals the unresolved TB imbalance after excluding orphan accounts and FX gaps. Investigate the row-level exceptions."
+  },
+  {
+    "check": "P&L Identity",
+    "status": "PASS",
+    "value": 4794700.0
+  },
+  {
+    "check": "TB Debits = Credits",
+    "status": "FAIL",
+    "expected": 42524800.3,
+    "actual": 42347700.0,
+    "delta": 177100.3,
+    "severity": "HIGH",
+    "suggested_action": "Trial balance out of balance after adjustments. Check rejected JEs, orphan accounts, and FX translation gaps."
+  }
+]

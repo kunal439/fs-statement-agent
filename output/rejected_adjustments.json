@@ -1,0 +1,56 @@
+[
+  {
+    "je": {
+      "id": "JE-002",
+      "description": "Reclassify marketing spend wrongly booked to T&E",
+      "date": "2024-12-28",
+      "source": "Controller note 2024-12-28",
+      "lines": [
+        {
+          "account": "6300",
+          "debit": 28500.0,
+          "credit": 0.0,
+          "memo": "Move from T&E"
+        },
+        {
+          "account": "6310",
+          "debit": 0.0,
+          "credit": 25000.0,
+          "memo": "Reverse from T&E"
+        }
+      ]
+    },
+    "status": "REJECTED",
+    "reasons": [
+      "Debits (28,500.00) != Credits (25,000.00). Difference: 3,500.00.",
+      "Note: 6310 (Travel and Entertainment) has Debit normal balance but is credited. Verify this is intentional."
+    ]
+  },
+  {
+    "je": {
+      "id": "JE-008",
+      "description": "Intercompany settlement \u2014 UK sub",
+      "date": "2024-12-30",
+      "source": "IC reconciliation",
+      "lines": [
+        {
+          "account": "2170",
+          "debit": 320000.0,
+          "credit": 0.0,
+          "memo": "IC payable down"
+        },
+        {
+          "account": "2170",
+          "debit": 0.0,
+          "credit": 320000.0,
+          "memo": "IC payable up"
+        }
+      ]
+    },
+    "status": "REJECTED",
+    "reasons": [
+      "Circular entry: account 2170 is both debited and credited for the same amount. Net economic effect is zero.",
+      "Note: 2170 (Intercompany Payable) has Credit normal balance but is debited. Verify this is intentional."
+    ]
+  }
+]

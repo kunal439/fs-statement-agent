@@ -1,0 +1,29 @@
+[
+  {
+    "je": {
+      "id": "JE-005",
+      "description": "Reclass conference travel from old code",
+      "date": "2024-12-15",
+      "source": "AP team",
+      "lines": [
+        {
+          "account": "6315",
+          "debit": 18500.0,
+          "credit": 0.0,
+          "memo": "Conf travel"
+        },
+        {
+          "account": "6310",
+          "debit": 0.0,
+          "credit": 18500.0,
+          "memo": "Out of T&E"
+        }
+      ]
+    },
+    "status": "QUARANTINED",
+    "reasons": [
+      "Account 6315 not in COA. Cannot post until mapped.",
+      "Note: 6310 (Travel and Entertainment) has Debit normal balance but is credited. Verify this is intentional."
+    ]
+  }
+]
