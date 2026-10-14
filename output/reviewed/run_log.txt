@@ -1,0 +1,54 @@
+FINANCIAL STATEMENT PIPELINE: 2024-Q4 (run 14210a2d9f3c)
+Loaded 72 COA accounts, 62 TB rows, 33 prior TB rows, 7 FX rates, 10 JEs; review file: 2024-Q4.json; LLM: off
+
+[map] 58 exact; needs review:
+  6315 'Conf travel' ORPHAN
+  6905 'Sundry Operating Expenses' OVERRIDDEN -> 6900
+  9999 'Suspense - Unmapped' ORPHAN
+
+[fx]
+  trial_balance.csv row 3 1110 EUR 825,400.00 x 1.095 (period_end, exact) = 903,813.00
+  trial_balance.csv row 4 1110 GBP 412,300.00 x 1.251 (opening, fallback) = 515,787.30
+
+[adjustments]
+  JE-001 ACCEPTED
+  JE-002 REJECTED (reviewer: Returned to preparer: debit 28,500 vs credit 25,000. Confirm the reclass amount and resubmit.)
+      - Debits total 28,500.00 but credits total 25,000.00, so the entry is out of balance by 3,500.00. An unbalanced entry can't be posted, and the pipeline won't guess which line is wrong: return it to the preparer.
+  JE-003 REJECTED (reviewer: The pipeline remeasures EUR cash at the period-end rate; posting this entry as well would double-count.)
+      - This entry revalues 1110 Cash and Cash Equivalents through 7310 FX Gain/Loss - Unrealized, but the pipeline already translates the foreign-currency rows of 1110 Cash and Cash Equivalents at the period-end rate. Posting both would count the revaluation twice. Held for a reviewer to confirm and reject it in the review file.
+  JE-004 ACCEPTED
+  JE-005 QUARANTINED
+      - Account 6315 is not in the chart of accounts. Add it to the COA or map it in the review file; the entry is held until then.
+  JE-006 ACCEPTED
+  JE-007 ACCEPTED
+  JE-008 REJECTED (reviewer: Placeholder IC settlement with no counter-leg. IC team to repost against cash once the UK sub confirms.)
+      - Every account in this entry nets to zero (2170), so it balances but changes nothing. It looks like an intercompany settlement with the counter-leg missing (cash, or the other entity's receivable). Repost it with the real counter-accounts.
+  JE-009 ACCEPTED
+  JE-010 ACCEPTED
+
+[post] 6 JEs posted; ledger out of balance by 0.00; materiality 365,162.00
+  proposed SYS-FX: credit 181,900.30 (approved)
+  proposed SYS-SUSPENSE: debit 4,800.00 (approved)
+
+[build] assets 36,218,200.30 | suspense 17,200.00 | liabilities 18,770,000.00 | equity 17,465,400.30 | difference 0.00 | net income 4,965,400.30
+
+[verify]
+  PASS          INPUT_HEADER: Adjustments file matches the period and functional currency
+  PASS          FX_RATES_AVAILABLE: Every foreign-currency row has a rate
+  FAIL [REVIEW] FX_ESTIMATES: No translation relies on an estimated rate (signed off by Demo Controller)
+  PASS          LEDGER_BALANCED: Ledger balances after translation and posting
+  PASS          REVIEW_FILE: Reviewer approvals still match the numbers
+  PASS          JE_POSTED_BALANCED: Every posted adjustment balances
+  FAIL [REVIEW] JE_EXCEPTIONS: Every adjustment is posted or has a reviewer decision
+  FAIL [REVIEW] TB_ACCOUNTS_MAPPED: Every trial-balance account maps to the COA
+  PASS          PRIOR_ACCOUNTS_MAPPED: Every prior-period account maps to the COA
+  FAIL [REVIEW] TB_DUPLICATE_ROWS: Each account/currency appears once in the trial balance
+  PASS          LINEAGE_COMPLETE: Every source row and posted line lands in exactly one statement line
+  PASS          LINEAGE_TIES: Every statement line equals the sum of its lineage
+  PASS          BS_IDENTITY: Assets + suspense = liabilities + equity
+  PASS          NI_TO_EQUITY: Net income ties from P&L to retained earnings
+  FAIL [REVIEW] PRIOR_TB_BALANCED: Prior-period trial balance balances
+  FAIL [REVIEW] RE_ROLLFORWARD: Opening retained earnings roll from the prior period
+  FAIL [INFO]   COA_STRUCTURE: Chart of accounts structure
+
+STATUS: REVIEW: statements are complete but not issuable until the items below are signed off. (exit 0)

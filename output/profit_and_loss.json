@@ -1,177 +1,598 @@
 {
+  "statement": "Profit and Loss",
+  "from": "2024-10-01",
+  "to": "2024-12-31",
   "period": "2024-Q4",
   "currency": "USD",
-  "lines": [
+  "status": "BLOCKED",
+  "issuable": false,
+  "watermark": "DRAFT - BLOCKED, NOT FOR ISSUE",
+  "run_id": "dab528f778f6",
+  "sections": [
     {
-      "code": "4100",
-      "name": "Product Revenue",
-      "type": "Revenue",
-      "value": 28500000.0
+      "code": "4000",
+      "name": "Revenue",
+      "total": "34485000.00",
+      "groups": [
+        {
+          "code": "4000",
+          "name": "Revenue",
+          "lines": [
+            {
+              "code": "4100",
+              "name": "Product Revenue",
+              "amount": "28500000.00",
+              "presentation": "credit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 34,
+                  "account": "4100",
+                  "currency": "USD",
+                  "amount": "-28500000.00",
+                  "usd": "-28500000.00"
+                }
+              ]
+            },
+            {
+              "code": "4110",
+              "name": "Service Revenue",
+              "amount": "6200000.00",
+              "presentation": "credit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 35,
+                  "account": "4110",
+                  "currency": "USD",
+                  "amount": "-6200000.00",
+                  "usd": "-6200000.00"
+                }
+              ]
+            },
+            {
+              "code": "4200",
+              "name": "Sales Returns and Allowances",
+              "amount": "-340000.00",
+              "presentation": "credit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 36,
+                  "account": "4200",
+                  "currency": "USD",
+                  "amount": "340000.00",
+                  "usd": "340000.00"
+                }
+              ]
+            },
+            {
+              "code": "4300",
+              "name": "Other Operating Revenue",
+              "amount": "125000.00",
+              "presentation": "credit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 37,
+                  "account": "4300",
+                  "currency": "USD",
+                  "amount": "-125000.00",
+                  "usd": "-125000.00"
+                }
+              ]
+            }
+          ],
+          "total": "34485000.00"
+        }
+      ]
     },
     {
-      "code": "4110",
-      "name": "Service Revenue",
-      "type": "Revenue",
-      "value": 6200000.0
+      "code": "5000",
+      "name": "Cost of Goods Sold",
+      "total": "-16650000.00",
+      "groups": [
+        {
+          "code": "5000",
+          "name": "Cost of Goods Sold",
+          "lines": [
+            {
+              "code": "5100",
+              "name": "COGS - Materials",
+              "amount": "-9800000.00",
+              "presentation": "credit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 38,
+                  "account": "5100",
+                  "currency": "USD",
+                  "amount": "9800000.00",
+                  "usd": "9800000.00"
+                }
+              ]
+            },
+            {
+              "code": "5110",
+              "name": "COGS - Direct Labor",
+              "amount": "-4200000.00",
+              "presentation": "credit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 39,
+                  "account": "5110",
+                  "currency": "USD",
+                  "amount": "4200000.00",
+                  "usd": "4200000.00"
+                }
+              ]
+            },
+            {
+              "code": "5120",
+              "name": "COGS - Manufacturing Overhead",
+              "amount": "-2650000.00",
+              "presentation": "credit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 40,
+                  "account": "5120",
+                  "currency": "USD",
+                  "amount": "2650000.00",
+                  "usd": "2650000.00"
+                }
+              ]
+            }
+          ],
+          "total": "-16650000.00"
+        }
+      ]
     },
     {
-      "code": "4200",
-      "name": "Sales Returns and Allowances",
-      "type": "Revenue",
-      "value": -340000.0
+      "code": "6000",
+      "name": "Operating Expenses",
+      "total": "-11840500.00",
+      "groups": [
+        {
+          "code": "6000",
+          "name": "Operating Expenses",
+          "lines": [
+            {
+              "code": "6100",
+              "name": "Salaries and Wages",
+              "amount": "-6250000.00",
+              "presentation": "credit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 41,
+                  "account": "6100",
+                  "currency": "USD",
+                  "amount": "5400000.00",
+                  "usd": "5400000.00"
+                },
+                {
+                  "source": "manual_adjustments.json",
+                  "je": "JE-001",
+                  "line": 1,
+                  "account": "6100",
+                  "memo": "Bonus accrual",
+                  "usd": "850000.00"
+                }
+              ]
+            },
+            {
+              "code": "6110",
+              "name": "Employee Benefits",
+              "amount": "-920000.00",
+              "presentation": "credit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 42,
+                  "account": "6110",
+                  "currency": "USD",
+                  "amount": "920000.00",
+                  "usd": "920000.00"
+                }
+              ]
+            },
+            {
+              "code": "6120",
+              "name": "Payroll Taxes",
+              "amount": "-410000.00",
+              "presentation": "credit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 43,
+                  "account": "6120",
+                  "currency": "USD",
+                  "amount": "410000.00",
+                  "usd": "410000.00"
+                }
+              ]
+            },
+            {
+              "code": "6200",
+              "name": "Rent Expense",
+              "amount": "-480000.00",
+              "presentation": "credit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 44,
+                  "account": "6200",
+                  "currency": "USD",
+                  "amount": "480000.00",
+                  "usd": "480000.00"
+                }
+              ]
+            },
+            {
+              "code": "6210",
+              "name": "Utilities",
+              "amount": "-115000.00",
+              "presentation": "credit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 45,
+                  "account": "6210",
+                  "currency": "USD",
+                  "amount": "115000.00",
+                  "usd": "115000.00"
+                }
+              ]
+            },
+            {
+              "code": "6220",
+              "name": "Office Supplies",
+              "amount": "-62000.00",
+              "presentation": "credit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 46,
+                  "account": "6220",
+                  "currency": "USD",
+                  "amount": "62000.00",
+                  "usd": "62000.00"
+                }
+              ]
+            },
+            {
+              "code": "6300",
+              "name": "Marketing and Advertising",
+              "amount": "-980000.00",
+              "presentation": "credit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 47,
+                  "account": "6300",
+                  "currency": "USD",
+                  "amount": "980000.00",
+                  "usd": "980000.00"
+                }
+              ]
+            },
+            {
+              "code": "6310",
+              "name": "Travel and Entertainment",
+              "amount": "-283500.00",
+              "presentation": "credit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 48,
+                  "account": "6310",
+                  "currency": "USD",
+                  "amount": "245000.00",
+                  "usd": "245000.00"
+                },
+                {
+                  "source": "trial_balance.csv",
+                  "row": 49,
+                  "account": "6310",
+                  "currency": "USD",
+                  "amount": "38500.00",
+                  "usd": "38500.00"
+                }
+              ]
+            },
+            {
+              "code": "6400",
+              "name": "Professional Fees",
+              "amount": "-595000.00",
+              "presentation": "credit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 50,
+                  "account": "6400",
+                  "currency": "USD",
+                  "amount": "520000.00",
+                  "usd": "520000.00"
+                },
+                {
+                  "source": "manual_adjustments.json",
+                  "je": "JE-009",
+                  "line": 1,
+                  "account": "6400",
+                  "memo": "Legal accrual",
+                  "usd": "75000.00"
+                }
+              ]
+            },
+            {
+              "code": "6410",
+              "name": "Insurance",
+              "amount": "-180000.00",
+              "presentation": "credit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 51,
+                  "account": "6410",
+                  "currency": "USD",
+                  "amount": "180000.00",
+                  "usd": "180000.00"
+                }
+              ]
+            },
+            {
+              "code": "6500",
+              "name": "Depreciation Expense",
+              "amount": "-1065000.00",
+              "presentation": "credit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 52,
+                  "account": "6500",
+                  "currency": "USD",
+                  "amount": "850000.00",
+                  "usd": "850000.00"
+                },
+                {
+                  "source": "manual_adjustments.json",
+                  "je": "JE-006",
+                  "line": 1,
+                  "account": "6500",
+                  "memo": "Q4 dep",
+                  "usd": "215000.00"
+                }
+              ]
+            },
+            {
+              "code": "6510",
+              "name": "Amortization Expense",
+              "amount": "-220000.00",
+              "presentation": "credit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 53,
+                  "account": "6510",
+                  "currency": "USD",
+                  "amount": "220000.00",
+                  "usd": "220000.00"
+                }
+              ]
+            },
+            {
+              "code": "6600",
+              "name": "Bad Debt Expense",
+              "amount": "-140000.00",
+              "presentation": "credit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 54,
+                  "account": "6600",
+                  "currency": "USD",
+                  "amount": "95000.00",
+                  "usd": "95000.00"
+                },
+                {
+                  "source": "manual_adjustments.json",
+                  "je": "JE-004",
+                  "line": 1,
+                  "account": "6600",
+                  "memo": "Top-up reserve",
+                  "usd": "45000.00"
+                }
+              ]
+            },
+            {
+              "code": "6900",
+              "name": "Other Operating Expenses",
+              "amount": "-140000.00",
+              "presentation": "credit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 55,
+                  "account": "6900",
+                  "currency": "USD",
+                  "amount": "140000.00",
+                  "usd": "140000.00"
+                }
+              ]
+            }
+          ],
+          "total": "-11840500.00"
+        }
+      ]
     },
     {
-      "code": "4300",
-      "name": "Other Operating Revenue",
-      "type": "Revenue",
-      "value": 125000.0
+      "code": "7000",
+      "name": "Non-Operating Items",
+      "total": "-373000.00",
+      "groups": [
+        {
+          "code": "7000",
+          "name": "Non-Operating Items",
+          "lines": [
+            {
+              "code": "7100",
+              "name": "Interest Income",
+              "amount": "62000.00",
+              "presentation": "credit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 56,
+                  "account": "7100",
+                  "currency": "USD",
+                  "amount": "-62000.00",
+                  "usd": "-62000.00"
+                }
+              ]
+            },
+            {
+              "code": "7200",
+              "name": "Interest Expense",
+              "amount": "-410000.00",
+              "presentation": "credit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 57,
+                  "account": "7200",
+                  "currency": "USD",
+                  "amount": "410000.00",
+                  "usd": "410000.00"
+                }
+              ]
+            },
+            {
+              "code": "7300",
+              "name": "FX Gain/Loss - Realized",
+              "amount": "-85000.00",
+              "presentation": "credit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 58,
+                  "account": "7300",
+                  "currency": "USD",
+                  "amount": "85000.00",
+                  "usd": "85000.00"
+                }
+              ]
+            },
+            {
+              "code": "7310",
+              "name": "FX Gain/Loss - Unrealized",
+              "amount": "42000.00",
+              "presentation": "credit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 59,
+                  "account": "7310",
+                  "currency": "USD",
+                  "amount": "-42000.00",
+                  "usd": "-42000.00"
+                }
+              ]
+            },
+            {
+              "code": "7400",
+              "name": "Gain/Loss on Disposal of Assets",
+              "amount": "18000.00",
+              "presentation": "credit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 60,
+                  "account": "7400",
+                  "currency": "USD",
+                  "amount": "-18000.00",
+                  "usd": "-18000.00"
+                }
+              ]
+            }
+          ],
+          "total": "-373000.00"
+        }
+      ]
     },
     {
-      "code": "5100",
-      "name": "COGS - Materials",
-      "type": "Expense",
-      "value": 9800000.0
-    },
-    {
-      "code": "5110",
-      "name": "COGS - Direct Labor",
-      "type": "Expense",
-      "value": 4200000.0
-    },
-    {
-      "code": "5120",
-      "name": "COGS - Manufacturing Overhead",
-      "type": "Expense",
-      "value": 2650000.0
-    },
-    {
-      "code": "6100",
-      "name": "Salaries and Wages",
-      "type": "Expense",
-      "value": 6250000.0
-    },
-    {
-      "code": "6110",
-      "name": "Employee Benefits",
-      "type": "Expense",
-      "value": 920000.0
-    },
-    {
-      "code": "6120",
-      "name": "Payroll Taxes",
-      "type": "Expense",
-      "value": 410000.0
-    },
-    {
-      "code": "6200",
-      "name": "Rent Expense",
-      "type": "Expense",
-      "value": 480000.0
-    },
-    {
-      "code": "6210",
-      "name": "Utilities",
-      "type": "Expense",
-      "value": 115000.0
-    },
-    {
-      "code": "6220",
-      "name": "Office Supplies",
-      "type": "Expense",
-      "value": 62000.0
-    },
-    {
-      "code": "6300",
-      "name": "Marketing and Advertising",
-      "type": "Expense",
-      "value": 980000.0
-    },
-    {
-      "code": "6310",
-      "name": "Travel and Entertainment",
-      "type": "Expense",
-      "value": 283500.0
-    },
-    {
-      "code": "6400",
-      "name": "Professional Fees",
-      "type": "Expense",
-      "value": 595000.0
-    },
-    {
-      "code": "6410",
-      "name": "Insurance",
-      "type": "Expense",
-      "value": 180000.0
-    },
-    {
-      "code": "6500",
-      "name": "Depreciation Expense",
-      "type": "Expense",
-      "value": 1065000.0
-    },
-    {
-      "code": "6510",
-      "name": "Amortization Expense",
-      "type": "Expense",
-      "value": 220000.0
-    },
-    {
-      "code": "6600",
-      "name": "Bad Debt Expense",
-      "type": "Expense",
-      "value": 140000.0
-    },
-    {
-      "code": "6900",
-      "name": "Other Operating Expenses",
-      "type": "Expense",
-      "value": 140000.0
-    },
-    {
-      "code": "7100",
-      "name": "Interest Income",
-      "type": "Revenue",
-      "value": 62000.0
-    },
-    {
-      "code": "7200",
-      "name": "Interest Expense",
-      "type": "Expense",
-      "value": 410000.0
-    },
-    {
-      "code": "7300",
-      "name": "FX Gain/Loss - Realized",
-      "type": "Expense",
-      "value": 85000.0
-    },
-    {
-      "code": "7310",
-      "name": "FX Gain/Loss - Unrealized",
-      "type": "Expense",
-      "value": -53200.0
-    },
-    {
-      "code": "7400",
-      "name": "Gain/Loss on Disposal of Assets",
-      "type": "Expense",
-      "value": -18000.0
-    },
-    {
-      "code": "8100",
-      "name": "Current Tax Expense",
-      "type": "Expense",
-      "value": 680000.0
-    },
-    {
-      "code": "8200",
-      "name": "Deferred Tax Expense",
-      "type": "Expense",
-      "value": 158000.0
+      "code": "8000",
+      "name": "Income Tax Expense",
+      "total": "-838000.00",
+      "groups": [
+        {
+          "code": "8000",
+          "name": "Income Tax Expense",
+          "lines": [
+            {
+              "code": "8100",
+              "name": "Current Tax Expense",
+              "amount": "-680000.00",
+              "presentation": "credit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 61,
+                  "account": "8100",
+                  "currency": "USD",
+                  "amount": "680000.00",
+                  "usd": "680000.00"
+                }
+              ]
+            },
+            {
+              "code": "8200",
+              "name": "Deferred Tax Expense",
+              "amount": "-158000.00",
+              "presentation": "credit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 62,
+                  "account": "8200",
+                  "currency": "USD",
+                  "amount": "120000.00",
+                  "usd": "120000.00"
+                },
+                {
+                  "source": "manual_adjustments.json",
+                  "je": "JE-007",
+                  "line": 1,
+                  "account": "8200",
+                  "memo": "DTA reduction",
+                  "usd": "38000.00"
+                }
+              ]
+            }
+          ],
+          "total": "-838000.00"
+        }
+      ]
     }
   ],
-  "total_revenue": 34547000.0,
-  "total_expenses": 29752300.0,
-  "net_income": 4794700.0
+  "subtotals": [
+    {
+      "label": "Gross profit",
+      "amount": "17835000.00"
+    },
+    {
+      "label": "Operating income",
+      "amount": "5994500.00"
+    },
+    {
+      "label": "Income before tax",
+      "amount": "5621500.00"
+    },
+    {
+      "label": "Net income",
+      "amount": "4783500.00"
+    }
+  ],
+  "net_income": "4783500.00"
 }

@@ -1,0 +1,239 @@
+{
+  "period": "2024-Q4",
+  "entries": [
+    {
+      "id": "JE-001",
+      "description": "Accrue Q4 bonus pool",
+      "date": "2024-12-31",
+      "source": "Finance team — bonus accrual workbook v3",
+      "status": "ACCEPTED",
+      "reasons": [],
+      "lines": [
+        {
+          "account": "6100",
+          "debit": "850000.00",
+          "credit": "0.00",
+          "memo": "Bonus accrual"
+        },
+        {
+          "account": "2120",
+          "debit": "0.00",
+          "credit": "850000.00",
+          "memo": "Accrual offset"
+        }
+      ]
+    },
+    {
+      "id": "JE-002",
+      "description": "Reclassify marketing spend wrongly booked to T&E",
+      "date": "2024-12-28",
+      "source": "Controller note 2024-12-28",
+      "status": "REJECTED",
+      "reasons": [
+        "Debits total 28,500.00 but credits total 25,000.00, so the entry is out of balance by 3,500.00. An unbalanced entry can't be posted, and the pipeline won't guess which line is wrong: return it to the preparer."
+      ],
+      "lines": [
+        {
+          "account": "6300",
+          "debit": "28500.00",
+          "credit": "0.00",
+          "memo": "Move from T&E"
+        },
+        {
+          "account": "6310",
+          "debit": "0.00",
+          "credit": "25000.00",
+          "memo": "Reverse from T&E"
+        }
+      ],
+      "decided_by": "Demo Controller",
+      "decision": "Returned to preparer: debit 28,500 vs credit 25,000. Confirm the reclass amount and resubmit."
+    },
+    {
+      "id": "JE-003",
+      "description": "FX revaluation of EUR cash balance to period-end rate",
+      "date": "2024-12-31",
+      "source": "FX reval calc",
+      "status": "REJECTED",
+      "reasons": [
+        "This entry revalues 1110 Cash and Cash Equivalents through 7310 FX Gain/Loss - Unrealized, but the pipeline already translates the foreign-currency rows of 1110 Cash and Cash Equivalents at the period-end rate. Posting both would count the revaluation twice. Held for a reviewer to confirm and reject it in the review file."
+      ],
+      "lines": [
+        {
+          "account": "1110",
+          "debit": "11200.00",
+          "credit": "0.00",
+          "memo": "EUR cash uplift"
+        },
+        {
+          "account": "7310",
+          "debit": "0.00",
+          "credit": "11200.00",
+          "memo": "Unrealized FX gain"
+        }
+      ],
+      "decided_by": "Demo Controller",
+      "decision": "The pipeline remeasures EUR cash at the period-end rate; posting this entry as well would double-count."
+    },
+    {
+      "id": "JE-004",
+      "description": "Bad debt provision top-up",
+      "date": "2024-12-31",
+      "source": "AR aging review",
+      "status": "ACCEPTED",
+      "reasons": [],
+      "lines": [
+        {
+          "account": "6600",
+          "debit": "45000.00",
+          "credit": "0.00",
+          "memo": "Top-up reserve"
+        },
+        {
+          "account": "1121",
+          "debit": "0.00",
+          "credit": "45000.00",
+          "memo": "Increase allowance"
+        }
+      ]
+    },
+    {
+      "id": "JE-005",
+      "description": "Reclass conference travel from old code",
+      "date": "2024-12-15",
+      "source": "AP team",
+      "status": "QUARANTINED",
+      "reasons": [
+        "Account 6315 is not in the chart of accounts. Add it to the COA or map it in the review file; the entry is held until then."
+      ],
+      "lines": [
+        {
+          "account": "6315",
+          "debit": "18500.00",
+          "credit": "0.00",
+          "memo": "Conf travel"
+        },
+        {
+          "account": "6310",
+          "debit": "0.00",
+          "credit": "18500.00",
+          "memo": "Out of T&E"
+        }
+      ]
+    },
+    {
+      "id": "JE-006",
+      "description": "Depreciation catch-up — Q4",
+      "date": "2024-12-31",
+      "source": "Fixed asset register",
+      "status": "ACCEPTED",
+      "reasons": [],
+      "lines": [
+        {
+          "account": "6500",
+          "debit": "215000.00",
+          "credit": "0.00",
+          "memo": "Q4 dep"
+        },
+        {
+          "account": "1211",
+          "debit": "0.00",
+          "credit": "215000.00",
+          "memo": "Accum dep"
+        }
+      ]
+    },
+    {
+      "id": "JE-007",
+      "description": "Deferred tax true-up",
+      "date": "2024-12-31",
+      "source": "Tax provision memo",
+      "status": "ACCEPTED",
+      "reasons": [],
+      "lines": [
+        {
+          "account": "8200",
+          "debit": "38000.00",
+          "credit": "0.00",
+          "memo": "DTA reduction"
+        },
+        {
+          "account": "1250",
+          "debit": "0.00",
+          "credit": "38000.00",
+          "memo": "Reduce DTA"
+        }
+      ]
+    },
+    {
+      "id": "JE-008",
+      "description": "Intercompany settlement — UK sub",
+      "date": "2024-12-30",
+      "source": "IC reconciliation",
+      "status": "REJECTED",
+      "reasons": [
+        "Every account in this entry nets to zero (2170), so it balances but changes nothing. It looks like an intercompany settlement with the counter-leg missing (cash, or the other entity's receivable). Repost it with the real counter-accounts."
+      ],
+      "lines": [
+        {
+          "account": "2170",
+          "debit": "320000.00",
+          "credit": "0.00",
+          "memo": "IC payable down"
+        },
+        {
+          "account": "2170",
+          "debit": "0.00",
+          "credit": "320000.00",
+          "memo": "IC payable up"
+        }
+      ],
+      "decided_by": "Demo Controller",
+      "decision": "Placeholder IC settlement with no counter-leg. IC team to repost against cash once the UK sub confirms."
+    },
+    {
+      "id": "JE-009",
+      "description": "Accrue legal fees for ongoing litigation",
+      "date": "2024-12-31",
+      "source": "Legal memo dated 2024-12-29",
+      "status": "ACCEPTED",
+      "reasons": [],
+      "lines": [
+        {
+          "account": "6400",
+          "debit": "75000.00",
+          "credit": "0.00",
+          "memo": "Legal accrual"
+        },
+        {
+          "account": "2120",
+          "debit": "0.00",
+          "credit": "75000.00",
+          "memo": "Accrued legal"
+        }
+      ]
+    },
+    {
+      "id": "JE-010",
+      "description": "Reclass long-term debt current portion",
+      "date": "2024-12-31",
+      "source": "Treasury schedule",
+      "status": "ACCEPTED",
+      "reasons": [],
+      "lines": [
+        {
+          "account": "2210",
+          "debit": "200000.00",
+          "credit": "0.00",
+          "memo": "Out of LT debt"
+        },
+        {
+          "account": "2140",
+          "debit": "0.00",
+          "credit": "200000.00",
+          "memo": "Into current"
+        }
+      ]
+    }
+  ]
+}

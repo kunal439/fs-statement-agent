@@ -1,0 +1,763 @@
+{
+  "1110": {
+    "account": "1110",
+    "name": "Cash and Cash Equivalents",
+    "seen_in": [
+      "trial_balance.csv row 2",
+      "trial_balance.csv row 3",
+      "trial_balance.csv row 4",
+      "prior_period_tb.csv row 2",
+      "prior_period_tb.csv row 3",
+      "prior_period_tb.csv row 4",
+      "JE-003 line 1"
+    ],
+    "status": "EXACT",
+    "coa_code": "1110",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "1120": {
+    "account": "1120",
+    "name": "Accounts Receivable",
+    "seen_in": [
+      "trial_balance.csv row 5",
+      "prior_period_tb.csv row 5"
+    ],
+    "status": "EXACT",
+    "coa_code": "1120",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "1121": {
+    "account": "1121",
+    "name": "Allowance for Doubtful Accounts",
+    "seen_in": [
+      "trial_balance.csv row 6",
+      "prior_period_tb.csv row 6",
+      "JE-004 line 2"
+    ],
+    "status": "EXACT",
+    "coa_code": "1121",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "1130": {
+    "account": "1130",
+    "name": "Inventory - Raw Materials",
+    "seen_in": [
+      "trial_balance.csv row 7",
+      "prior_period_tb.csv row 7"
+    ],
+    "status": "EXACT",
+    "coa_code": "1130",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "1131": {
+    "account": "1131",
+    "name": "Inventory - Finished Goods",
+    "seen_in": [
+      "trial_balance.csv row 8",
+      "prior_period_tb.csv row 8"
+    ],
+    "status": "EXACT",
+    "coa_code": "1131",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "1140": {
+    "account": "1140",
+    "name": "Prepaid Expenses",
+    "seen_in": [
+      "trial_balance.csv row 9",
+      "prior_period_tb.csv row 9"
+    ],
+    "status": "EXACT",
+    "coa_code": "1140",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "1150": {
+    "account": "1150",
+    "name": "Other Current Assets",
+    "seen_in": [
+      "trial_balance.csv row 10",
+      "prior_period_tb.csv row 10"
+    ],
+    "status": "EXACT",
+    "coa_code": "1150",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "1210": {
+    "account": "1210",
+    "name": "Property, Plant & Equipment - Cost",
+    "seen_in": [
+      "trial_balance.csv row 11",
+      "prior_period_tb.csv row 11"
+    ],
+    "status": "EXACT",
+    "coa_code": "1210",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "1211": {
+    "account": "1211",
+    "name": "Accumulated Depreciation - PPE",
+    "seen_in": [
+      "trial_balance.csv row 12",
+      "prior_period_tb.csv row 12",
+      "JE-006 line 2"
+    ],
+    "status": "EXACT",
+    "coa_code": "1211",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "1220": {
+    "account": "1220",
+    "name": "Intangible Assets - Cost",
+    "seen_in": [
+      "trial_balance.csv row 13",
+      "prior_period_tb.csv row 13"
+    ],
+    "status": "EXACT",
+    "coa_code": "1220",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "1221": {
+    "account": "1221",
+    "name": "Accumulated Amortization",
+    "seen_in": [
+      "trial_balance.csv row 14",
+      "prior_period_tb.csv row 14"
+    ],
+    "status": "EXACT",
+    "coa_code": "1221",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "1230": {
+    "account": "1230",
+    "name": "Goodwill",
+    "seen_in": [
+      "trial_balance.csv row 15",
+      "prior_period_tb.csv row 15"
+    ],
+    "status": "EXACT",
+    "coa_code": "1230",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "1240": {
+    "account": "1240",
+    "name": "Long-term Investments",
+    "seen_in": [
+      "trial_balance.csv row 16",
+      "prior_period_tb.csv row 16"
+    ],
+    "status": "EXACT",
+    "coa_code": "1240",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "1250": {
+    "account": "1250",
+    "name": "Deferred Tax Asset",
+    "seen_in": [
+      "trial_balance.csv row 17",
+      "prior_period_tb.csv row 17",
+      "JE-007 line 2"
+    ],
+    "status": "EXACT",
+    "coa_code": "1250",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "2110": {
+    "account": "2110",
+    "name": "Accounts Payable",
+    "seen_in": [
+      "trial_balance.csv row 18",
+      "prior_period_tb.csv row 18"
+    ],
+    "status": "EXACT",
+    "coa_code": "2110",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "2120": {
+    "account": "2120",
+    "name": "Accrued Expenses",
+    "seen_in": [
+      "trial_balance.csv row 19",
+      "prior_period_tb.csv row 19",
+      "JE-001 line 2",
+      "JE-009 line 2"
+    ],
+    "status": "EXACT",
+    "coa_code": "2120",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "2130": {
+    "account": "2130",
+    "name": "Short-term Debt",
+    "seen_in": [
+      "trial_balance.csv row 20",
+      "prior_period_tb.csv row 20"
+    ],
+    "status": "EXACT",
+    "coa_code": "2130",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "2140": {
+    "account": "2140",
+    "name": "Current Portion of Long-term Debt",
+    "seen_in": [
+      "trial_balance.csv row 21",
+      "prior_period_tb.csv row 21",
+      "JE-010 line 2"
+    ],
+    "status": "EXACT",
+    "coa_code": "2140",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "2150": {
+    "account": "2150",
+    "name": "Income Tax Payable",
+    "seen_in": [
+      "trial_balance.csv row 22",
+      "prior_period_tb.csv row 22"
+    ],
+    "status": "EXACT",
+    "coa_code": "2150",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "2160": {
+    "account": "2160",
+    "name": "Deferred Revenue",
+    "seen_in": [
+      "trial_balance.csv row 23",
+      "prior_period_tb.csv row 23"
+    ],
+    "status": "EXACT",
+    "coa_code": "2160",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "2170": {
+    "account": "2170",
+    "name": "Intercompany Payable",
+    "seen_in": [
+      "trial_balance.csv row 24",
+      "prior_period_tb.csv row 24",
+      "JE-008 line 1",
+      "JE-008 line 2"
+    ],
+    "status": "EXACT",
+    "coa_code": "2170",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "2210": {
+    "account": "2210",
+    "name": "Long-term Debt",
+    "seen_in": [
+      "trial_balance.csv row 25",
+      "prior_period_tb.csv row 25",
+      "JE-010 line 1"
+    ],
+    "status": "EXACT",
+    "coa_code": "2210",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "2220": {
+    "account": "2220",
+    "name": "Lease Liability - Long-term",
+    "seen_in": [
+      "trial_balance.csv row 26",
+      "prior_period_tb.csv row 26"
+    ],
+    "status": "EXACT",
+    "coa_code": "2220",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "2230": {
+    "account": "2230",
+    "name": "Deferred Tax Liability",
+    "seen_in": [
+      "trial_balance.csv row 27",
+      "prior_period_tb.csv row 27"
+    ],
+    "status": "EXACT",
+    "coa_code": "2230",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "2240": {
+    "account": "2240",
+    "name": "Pension Obligations",
+    "seen_in": [
+      "trial_balance.csv row 28",
+      "prior_period_tb.csv row 28"
+    ],
+    "status": "EXACT",
+    "coa_code": "2240",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "3100": {
+    "account": "3100",
+    "name": "Common Stock",
+    "seen_in": [
+      "trial_balance.csv row 29",
+      "prior_period_tb.csv row 29"
+    ],
+    "status": "EXACT",
+    "coa_code": "3100",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "3110": {
+    "account": "3110",
+    "name": "Additional Paid-in Capital",
+    "seen_in": [
+      "trial_balance.csv row 30",
+      "prior_period_tb.csv row 30"
+    ],
+    "status": "EXACT",
+    "coa_code": "3110",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "3200": {
+    "account": "3200",
+    "name": "Retained Earnings",
+    "seen_in": [
+      "trial_balance.csv row 31",
+      "prior_period_tb.csv row 31"
+    ],
+    "status": "EXACT",
+    "coa_code": "3200",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "3310": {
+    "account": "3310",
+    "name": "FX Translation Reserve",
+    "seen_in": [
+      "trial_balance.csv row 32",
+      "prior_period_tb.csv row 32"
+    ],
+    "status": "EXACT",
+    "coa_code": "3310",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "3400": {
+    "account": "3400",
+    "name": "Treasury Stock",
+    "seen_in": [
+      "trial_balance.csv row 33",
+      "prior_period_tb.csv row 33"
+    ],
+    "status": "EXACT",
+    "coa_code": "3400",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "4100": {
+    "account": "4100",
+    "name": "Product Revenue",
+    "seen_in": [
+      "trial_balance.csv row 34"
+    ],
+    "status": "EXACT",
+    "coa_code": "4100",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "4110": {
+    "account": "4110",
+    "name": "Service Revenue",
+    "seen_in": [
+      "trial_balance.csv row 35"
+    ],
+    "status": "EXACT",
+    "coa_code": "4110",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "4200": {
+    "account": "4200",
+    "name": "Sales Returns and Allowances",
+    "seen_in": [
+      "trial_balance.csv row 36"
+    ],
+    "status": "EXACT",
+    "coa_code": "4200",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "4300": {
+    "account": "4300",
+    "name": "Other Operating Revenue",
+    "seen_in": [
+      "trial_balance.csv row 37"
+    ],
+    "status": "EXACT",
+    "coa_code": "4300",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "5100": {
+    "account": "5100",
+    "name": "COGS - Materials",
+    "seen_in": [
+      "trial_balance.csv row 38"
+    ],
+    "status": "EXACT",
+    "coa_code": "5100",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "5110": {
+    "account": "5110",
+    "name": "COGS - Direct Labor",
+    "seen_in": [
+      "trial_balance.csv row 39"
+    ],
+    "status": "EXACT",
+    "coa_code": "5110",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "5120": {
+    "account": "5120",
+    "name": "COGS - Manufacturing Overhead",
+    "seen_in": [
+      "trial_balance.csv row 40"
+    ],
+    "status": "EXACT",
+    "coa_code": "5120",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "6100": {
+    "account": "6100",
+    "name": "Salaries and Wages",
+    "seen_in": [
+      "trial_balance.csv row 41",
+      "JE-001 line 1"
+    ],
+    "status": "EXACT",
+    "coa_code": "6100",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "6110": {
+    "account": "6110",
+    "name": "Employee Benefits",
+    "seen_in": [
+      "trial_balance.csv row 42"
+    ],
+    "status": "EXACT",
+    "coa_code": "6110",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "6120": {
+    "account": "6120",
+    "name": "Payroll Taxes",
+    "seen_in": [
+      "trial_balance.csv row 43"
+    ],
+    "status": "EXACT",
+    "coa_code": "6120",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "6200": {
+    "account": "6200",
+    "name": "Rent Expense",
+    "seen_in": [
+      "trial_balance.csv row 44"
+    ],
+    "status": "EXACT",
+    "coa_code": "6200",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "6210": {
+    "account": "6210",
+    "name": "Utilities",
+    "seen_in": [
+      "trial_balance.csv row 45"
+    ],
+    "status": "EXACT",
+    "coa_code": "6210",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "6220": {
+    "account": "6220",
+    "name": "Office Supplies",
+    "seen_in": [
+      "trial_balance.csv row 46"
+    ],
+    "status": "EXACT",
+    "coa_code": "6220",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "6300": {
+    "account": "6300",
+    "name": "Marketing and Advertising",
+    "seen_in": [
+      "trial_balance.csv row 47",
+      "JE-002 line 1"
+    ],
+    "status": "EXACT",
+    "coa_code": "6300",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "6310": {
+    "account": "6310",
+    "name": "Travel and Entertainment",
+    "seen_in": [
+      "trial_balance.csv row 48",
+      "trial_balance.csv row 49",
+      "JE-002 line 2",
+      "JE-005 line 2"
+    ],
+    "status": "EXACT",
+    "coa_code": "6310",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "6315": {
+    "account": "6315",
+    "name": "Conf travel",
+    "seen_in": [
+      "JE-005 line 1"
+    ],
+    "status": "ORPHAN",
+    "coa_code": null,
+    "requires_human": true,
+    "suggestion": null,
+    "alternatives": [
+      {
+        "coa_code": "5100",
+        "coa_name": "COGS - Materials",
+        "score": 0.519
+      },
+      {
+        "coa_code": "1120",
+        "coa_name": "Accounts Receivable",
+        "score": 0.467
+      },
+      {
+        "coa_code": "2110",
+        "coa_name": "Accounts Payable",
+        "score": 0.444
+      }
+    ]
+  },
+  "6400": {
+    "account": "6400",
+    "name": "Professional Fees",
+    "seen_in": [
+      "trial_balance.csv row 50",
+      "JE-009 line 1"
+    ],
+    "status": "EXACT",
+    "coa_code": "6400",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "6410": {
+    "account": "6410",
+    "name": "Insurance",
+    "seen_in": [
+      "trial_balance.csv row 51"
+    ],
+    "status": "EXACT",
+    "coa_code": "6410",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "6500": {
+    "account": "6500",
+    "name": "Depreciation Expense",
+    "seen_in": [
+      "trial_balance.csv row 52",
+      "JE-006 line 1"
+    ],
+    "status": "EXACT",
+    "coa_code": "6500",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "6510": {
+    "account": "6510",
+    "name": "Amortization Expense",
+    "seen_in": [
+      "trial_balance.csv row 53"
+    ],
+    "status": "EXACT",
+    "coa_code": "6510",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "6600": {
+    "account": "6600",
+    "name": "Bad Debt Expense",
+    "seen_in": [
+      "trial_balance.csv row 54",
+      "JE-004 line 1"
+    ],
+    "status": "EXACT",
+    "coa_code": "6600",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "6900": {
+    "account": "6900",
+    "name": "Other Operating Expenses",
+    "seen_in": [
+      "trial_balance.csv row 55"
+    ],
+    "status": "EXACT",
+    "coa_code": "6900",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "6905": {
+    "account": "6905",
+    "name": "Sundry Operating Expenses",
+    "seen_in": [
+      "prior_period_tb.csv row 34"
+    ],
+    "status": "OVERRIDDEN",
+    "coa_code": "6900",
+    "requires_human": false,
+    "suggestion": null,
+    "approved_by": "Demo Controller",
+    "reason": "Prior-period 'Sundry Operating Expenses' was renamed 'Other Operating Expenses' in the current COA (same catch-all opex account)."
+  },
+  "7100": {
+    "account": "7100",
+    "name": "Interest Income",
+    "seen_in": [
+      "trial_balance.csv row 56"
+    ],
+    "status": "EXACT",
+    "coa_code": "7100",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "7200": {
+    "account": "7200",
+    "name": "Interest Expense",
+    "seen_in": [
+      "trial_balance.csv row 57"
+    ],
+    "status": "EXACT",
+    "coa_code": "7200",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "7300": {
+    "account": "7300",
+    "name": "FX Gain/Loss - Realized",
+    "seen_in": [
+      "trial_balance.csv row 58"
+    ],
+    "status": "EXACT",
+    "coa_code": "7300",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "7310": {
+    "account": "7310",
+    "name": "FX Gain/Loss - Unrealized",
+    "seen_in": [
+      "trial_balance.csv row 59",
+      "JE-003 line 2"
+    ],
+    "status": "EXACT",
+    "coa_code": "7310",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "7400": {
+    "account": "7400",
+    "name": "Gain/Loss on Disposal of Assets",
+    "seen_in": [
+      "trial_balance.csv row 60"
+    ],
+    "status": "EXACT",
+    "coa_code": "7400",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "8100": {
+    "account": "8100",
+    "name": "Current Tax Expense",
+    "seen_in": [
+      "trial_balance.csv row 61"
+    ],
+    "status": "EXACT",
+    "coa_code": "8100",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "8200": {
+    "account": "8200",
+    "name": "Deferred Tax Expense",
+    "seen_in": [
+      "trial_balance.csv row 62",
+      "JE-007 line 1"
+    ],
+    "status": "EXACT",
+    "coa_code": "8200",
+    "requires_human": false,
+    "suggestion": null
+  },
+  "9999": {
+    "account": "9999",
+    "name": "Suspense - Unmapped",
+    "seen_in": [
+      "trial_balance.csv row 63"
+    ],
+    "status": "ORPHAN",
+    "coa_code": null,
+    "requires_human": true,
+    "suggestion": null,
+    "alternatives": [
+      {
+        "coa_code": "7310",
+        "coa_name": "FX Gain/Loss - Unrealized",
+        "score": 0.455
+      },
+      {
+        "coa_code": "1211",
+        "coa_name": "Accumulated Depreciation - PPE",
+        "score": 0.408
+      },
+      {
+        "coa_code": "5100",
+        "coa_name": "COGS - Materials",
+        "score": 0.4
+      }
+    ]
+  }
+}

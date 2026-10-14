@@ -1,0 +1,683 @@
+{
+  "statement": "Balance Sheet",
+  "as_of": "2024-12-31",
+  "period": "2024-Q4",
+  "currency": "USD",
+  "status": "REVIEW",
+  "issuable": false,
+  "watermark": null,
+  "run_id": "14210a2d9f3c",
+  "sections": [
+    {
+      "code": "1000",
+      "name": "Assets",
+      "total": "36218200.30",
+      "groups": [
+        {
+          "code": "1100",
+          "name": "Current Assets",
+          "lines": [
+            {
+              "code": "1110",
+              "name": "Cash and Cash Equivalents",
+              "amount": "5669600.30",
+              "presentation": "debit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 2,
+                  "account": "1110",
+                  "currency": "USD",
+                  "amount": "4250000.00",
+                  "usd": "4250000.00"
+                },
+                {
+                  "source": "trial_balance.csv",
+                  "row": 3,
+                  "account": "1110",
+                  "currency": "EUR",
+                  "amount": "825400.00",
+                  "usd": "903813.00",
+                  "rate": "1.095",
+                  "rate_type": "period_end",
+                  "rate_status": "exact",
+                  "rate_source": "fx_rates.csv row 3"
+                },
+                {
+                  "source": "trial_balance.csv",
+                  "row": 4,
+                  "account": "1110",
+                  "currency": "GBP",
+                  "amount": "412300.00",
+                  "usd": "515787.30",
+                  "rate": "1.251",
+                  "rate_type": "opening",
+                  "rate_status": "fallback",
+                  "rate_source": "fx_rates.csv row 8"
+                }
+              ]
+            },
+            {
+              "code": "1120",
+              "name": "Accounts Receivable",
+              "amount": "6180500.00",
+              "presentation": "debit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 5,
+                  "account": "1120",
+                  "currency": "USD",
+                  "amount": "6180500.00",
+                  "usd": "6180500.00"
+                }
+              ]
+            },
+            {
+              "code": "1121",
+              "name": "Allowance for Doubtful Accounts",
+              "amount": "-230000.00",
+              "presentation": "debit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 6,
+                  "account": "1121",
+                  "currency": "USD",
+                  "amount": "-185000.00",
+                  "usd": "-185000.00"
+                },
+                {
+                  "source": "manual_adjustments.json",
+                  "je": "JE-004",
+                  "line": 2,
+                  "account": "1121",
+                  "memo": "Increase allowance",
+                  "usd": "-45000.00"
+                }
+              ]
+            },
+            {
+              "code": "1130",
+              "name": "Inventory - Raw Materials",
+              "amount": "1920000.00",
+              "presentation": "debit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 7,
+                  "account": "1130",
+                  "currency": "USD",
+                  "amount": "1920000.00",
+                  "usd": "1920000.00"
+                }
+              ]
+            },
+            {
+              "code": "1131",
+              "name": "Inventory - Finished Goods",
+              "amount": "3410000.00",
+              "presentation": "debit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 8,
+                  "account": "1131",
+                  "currency": "USD",
+                  "amount": "3410000.00",
+                  "usd": "3410000.00"
+                }
+              ]
+            },
+            {
+              "code": "1140",
+              "name": "Prepaid Expenses",
+              "amount": "245000.00",
+              "presentation": "debit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 9,
+                  "account": "1140",
+                  "currency": "USD",
+                  "amount": "245000.00",
+                  "usd": "245000.00"
+                }
+              ]
+            },
+            {
+              "code": "1150",
+              "name": "Other Current Assets",
+              "amount": "78400.00",
+              "presentation": "debit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 10,
+                  "account": "1150",
+                  "currency": "USD",
+                  "amount": "78400.00",
+                  "usd": "78400.00"
+                }
+              ]
+            }
+          ],
+          "total": "17273500.30"
+        },
+        {
+          "code": "1200",
+          "name": "Non-Current Assets",
+          "lines": [
+            {
+              "code": "1210",
+              "name": "Property, Plant & Equipment - Cost",
+              "amount": "17007700.00",
+              "presentation": "debit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 11,
+                  "account": "1210",
+                  "currency": "USD",
+                  "amount": "17007700.00",
+                  "usd": "17007700.00"
+                }
+              ]
+            },
+            {
+              "code": "1211",
+              "name": "Accumulated Depreciation - PPE",
+              "amount": "-4415000.00",
+              "presentation": "debit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 12,
+                  "account": "1211",
+                  "currency": "USD",
+                  "amount": "-4200000.00",
+                  "usd": "-4200000.00"
+                },
+                {
+                  "source": "manual_adjustments.json",
+                  "je": "JE-006",
+                  "line": 2,
+                  "account": "1211",
+                  "memo": "Accum dep",
+                  "usd": "-215000.00"
+                }
+              ]
+            },
+            {
+              "code": "1220",
+              "name": "Intangible Assets - Cost",
+              "amount": "2800000.00",
+              "presentation": "debit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 13,
+                  "account": "1220",
+                  "currency": "USD",
+                  "amount": "2800000.00",
+                  "usd": "2800000.00"
+                }
+              ]
+            },
+            {
+              "code": "1221",
+              "name": "Accumulated Amortization",
+              "amount": "-980000.00",
+              "presentation": "debit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 14,
+                  "account": "1221",
+                  "currency": "USD",
+                  "amount": "-980000.00",
+                  "usd": "-980000.00"
+                }
+              ]
+            },
+            {
+              "code": "1230",
+              "name": "Goodwill",
+              "amount": "3500000.00",
+              "presentation": "debit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 15,
+                  "account": "1230",
+                  "currency": "USD",
+                  "amount": "3500000.00",
+                  "usd": "3500000.00"
+                }
+              ]
+            },
+            {
+              "code": "1240",
+              "name": "Long-term Investments",
+              "amount": "750000.00",
+              "presentation": "debit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 16,
+                  "account": "1240",
+                  "currency": "USD",
+                  "amount": "750000.00",
+                  "usd": "750000.00"
+                }
+              ]
+            },
+            {
+              "code": "1250",
+              "name": "Deferred Tax Asset",
+              "amount": "282000.00",
+              "presentation": "debit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 17,
+                  "account": "1250",
+                  "currency": "USD",
+                  "amount": "320000.00",
+                  "usd": "320000.00"
+                },
+                {
+                  "source": "manual_adjustments.json",
+                  "je": "JE-007",
+                  "line": 2,
+                  "account": "1250",
+                  "memo": "Reduce DTA",
+                  "usd": "-38000.00"
+                }
+              ]
+            }
+          ],
+          "total": "18944700.00"
+        }
+      ]
+    },
+    {
+      "code": "2000",
+      "name": "Liabilities",
+      "total": "18770000.00",
+      "groups": [
+        {
+          "code": "2100",
+          "name": "Current Liabilities",
+          "lines": [
+            {
+              "code": "2110",
+              "name": "Accounts Payable",
+              "amount": "2840000.00",
+              "presentation": "credit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 18,
+                  "account": "2110",
+                  "currency": "USD",
+                  "amount": "-2840000.00",
+                  "usd": "-2840000.00"
+                }
+              ]
+            },
+            {
+              "code": "2120",
+              "name": "Accrued Expenses",
+              "amount": "2075000.00",
+              "presentation": "credit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 19,
+                  "account": "2120",
+                  "currency": "USD",
+                  "amount": "-1150000.00",
+                  "usd": "-1150000.00"
+                },
+                {
+                  "source": "manual_adjustments.json",
+                  "je": "JE-001",
+                  "line": 2,
+                  "account": "2120",
+                  "memo": "Accrual offset",
+                  "usd": "-850000.00"
+                },
+                {
+                  "source": "manual_adjustments.json",
+                  "je": "JE-009",
+                  "line": 2,
+                  "account": "2120",
+                  "memo": "Accrued legal",
+                  "usd": "-75000.00"
+                }
+              ]
+            },
+            {
+              "code": "2130",
+              "name": "Short-term Debt",
+              "amount": "1500000.00",
+              "presentation": "credit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 20,
+                  "account": "2130",
+                  "currency": "USD",
+                  "amount": "-1500000.00",
+                  "usd": "-1500000.00"
+                }
+              ]
+            },
+            {
+              "code": "2140",
+              "name": "Current Portion of Long-term Debt",
+              "amount": "1000000.00",
+              "presentation": "credit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 21,
+                  "account": "2140",
+                  "currency": "USD",
+                  "amount": "-800000.00",
+                  "usd": "-800000.00"
+                },
+                {
+                  "source": "manual_adjustments.json",
+                  "je": "JE-010",
+                  "line": 2,
+                  "account": "2140",
+                  "memo": "Into current",
+                  "usd": "-200000.00"
+                }
+              ]
+            },
+            {
+              "code": "2150",
+              "name": "Income Tax Payable",
+              "amount": "420000.00",
+              "presentation": "credit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 22,
+                  "account": "2150",
+                  "currency": "USD",
+                  "amount": "-420000.00",
+                  "usd": "-420000.00"
+                }
+              ]
+            },
+            {
+              "code": "2160",
+              "name": "Deferred Revenue",
+              "amount": "680000.00",
+              "presentation": "credit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 23,
+                  "account": "2160",
+                  "currency": "USD",
+                  "amount": "-680000.00",
+                  "usd": "-680000.00"
+                }
+              ]
+            },
+            {
+              "code": "2170",
+              "name": "Intercompany Payable",
+              "amount": "1240000.00",
+              "presentation": "credit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 24,
+                  "account": "2170",
+                  "currency": "USD",
+                  "amount": "-1240000.00",
+                  "usd": "-1240000.00"
+                }
+              ]
+            }
+          ],
+          "total": "9755000.00"
+        },
+        {
+          "code": "2200",
+          "name": "Non-Current Liabilities",
+          "lines": [
+            {
+              "code": "2210",
+              "name": "Long-term Debt",
+              "amount": "6300000.00",
+              "presentation": "credit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 25,
+                  "account": "2210",
+                  "currency": "USD",
+                  "amount": "-6500000.00",
+                  "usd": "-6500000.00"
+                },
+                {
+                  "source": "manual_adjustments.json",
+                  "je": "JE-010",
+                  "line": 1,
+                  "account": "2210",
+                  "memo": "Out of LT debt",
+                  "usd": "200000.00"
+                }
+              ]
+            },
+            {
+              "code": "2220",
+              "name": "Lease Liability - Long-term",
+              "amount": "1320000.00",
+              "presentation": "credit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 26,
+                  "account": "2220",
+                  "currency": "USD",
+                  "amount": "-1320000.00",
+                  "usd": "-1320000.00"
+                }
+              ]
+            },
+            {
+              "code": "2230",
+              "name": "Deferred Tax Liability",
+              "amount": "485000.00",
+              "presentation": "credit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 27,
+                  "account": "2230",
+                  "currency": "USD",
+                  "amount": "-485000.00",
+                  "usd": "-485000.00"
+                }
+              ]
+            },
+            {
+              "code": "2240",
+              "name": "Pension Obligations",
+              "amount": "910000.00",
+              "presentation": "credit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 28,
+                  "account": "2240",
+                  "currency": "USD",
+                  "amount": "-910000.00",
+                  "usd": "-910000.00"
+                }
+              ]
+            }
+          ],
+          "total": "9015000.00"
+        }
+      ]
+    },
+    {
+      "code": "3000",
+      "name": "Equity",
+      "total": "17465400.30",
+      "groups": [
+        {
+          "code": "3000",
+          "name": "Equity",
+          "lines": [
+            {
+              "code": "3100",
+              "name": "Common Stock",
+              "amount": "1000000.00",
+              "presentation": "credit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 29,
+                  "account": "3100",
+                  "currency": "USD",
+                  "amount": "-1000000.00",
+                  "usd": "-1000000.00"
+                }
+              ]
+            },
+            {
+              "code": "3110",
+              "name": "Additional Paid-in Capital",
+              "amount": "4500000.00",
+              "presentation": "credit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 30,
+                  "account": "3110",
+                  "currency": "USD",
+                  "amount": "-4500000.00",
+                  "usd": "-4500000.00"
+                }
+              ]
+            },
+            {
+              "code": "3200",
+              "name": "Retained Earnings",
+              "amount": "12205400.30",
+              "presentation": "credit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 31,
+                  "account": "3200",
+                  "currency": "USD",
+                  "amount": "-7240000.00",
+                  "usd": "-7240000.00"
+                },
+                {
+                  "source": "system",
+                  "entry": "SYS-CLOSE",
+                  "line": 1,
+                  "account": "3200",
+                  "memo": "Net income for 2024-Q4 closed to retained earnings (profit_and_loss.json).",
+                  "usd": "-4965400.30"
+                }
+              ]
+            },
+            {
+              "code": "3310",
+              "name": "FX Translation Reserve",
+              "amount": "180000.00",
+              "presentation": "credit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 32,
+                  "account": "3310",
+                  "currency": "USD",
+                  "amount": "-180000.00",
+                  "usd": "-180000.00"
+                }
+              ]
+            },
+            {
+              "code": "3400",
+              "name": "Treasury Stock",
+              "amount": "-420000.00",
+              "presentation": "credit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 33,
+                  "account": "3400",
+                  "currency": "USD",
+                  "amount": "420000.00",
+                  "usd": "420000.00"
+                }
+              ]
+            }
+          ],
+          "total": "17465400.30"
+        }
+      ]
+    },
+    {
+      "code": "SUSPENSE",
+      "name": "Suspense - unmapped accounts (pending review)",
+      "total": "17200.00",
+      "groups": [
+        {
+          "code": "SUSPENSE",
+          "name": "Unmapped",
+          "lines": [
+            {
+              "code": "9999",
+              "name": "Suspense - Unmapped",
+              "amount": "17200.00",
+              "presentation": "debit_positive",
+              "lineage": [
+                {
+                  "source": "trial_balance.csv",
+                  "row": 63,
+                  "account": "9999",
+                  "currency": "USD",
+                  "amount": "12400.00",
+                  "usd": "12400.00"
+                },
+                {
+                  "source": "system",
+                  "entry": "SYS-SUSPENSE",
+                  "line": 1,
+                  "account": "9999",
+                  "memo": "Source TB difference parked in suspense pending investigation.",
+                  "approved_by": "Demo Controller",
+                  "reason": "Source TB difference below materiality. Parked in suspense; ERP export ticket raised.",
+                  "usd": "4800.00"
+                }
+              ]
+            }
+          ],
+          "total": "17200.00"
+        }
+      ]
+    }
+  ],
+  "totals": {
+    "assets": "36218200.30",
+    "suspense": "17200.00",
+    "liabilities": "18770000.00",
+    "equity": "17465400.30",
+    "difference": "0.00"
+  }
+}

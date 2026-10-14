@@ -1,60 +1,75 @@
-# Defect Inventory — Input Data (2024-Q4)
+# Defect Inventory: Input Data (2024-Q4)
 
-Analysis of the 5 input files. Defects found: **21** across 5 categories.
-Severity: **Critical** (blocks generation) · **High** (material) · **Medium** (review) · **Low** (cosmetic).
+**26 defects** across the five input files: the ones the brief lists, plus
+the ones it says it deliberately left out. Every defect that can change a
+number surfaces in `output/validation_findings.json`, in
+`output/review_packet.md`, or as a JE status. None is silently absorbed. The
+informational ones (TB-7, FX-2, FX-3, X-4, X-5) are documented here and in
+`docs/questions.md`.
 
-## A. Trial Balance (`trial_balance.csv`)
+**Severity:**
+- **Critical:** blocks issue.
+- **High:** material, or changes a number.
+- **Medium:** needs review.
+- **Low:** cosmetic or informational.
 
-| ID | Defect | Evidence | Severity | Handling |
-|----|--------|----------|----------|----------|
-| TB-1 | Unbalanced TB (debits ≠ credits) | Sum differs by ~1,000,300 USD-equivalent | Critical | Requires FX translation + adjustment review |
-| TB-2 | Duplicate account code | `6310` appears twice (245,000 + 38,500) | Medium | Sum rows; flag for reviewer |
-| TB-3 | Orphan account not in COA | `9999 Suspense - Unmapped` | High | Route to Mapper; surface as reconciling item |
-| TB-4 | Multi-currency rows | `1110 Cash` has USD, EUR, GBP rows | Medium | Translate using period-end rates |
-| TB-5 | Suspense account in use | `9999` implies upstream unmapped transaction | High | Escalate; do not silently absorb |
+## A. Trial balance (`trial_balance.csv`)
 
-## B. Chart of Accounts (`chart_of_accounts.csv`)
+| ID | Defect | Evidence | Sev. | Surfaced as |
+|----|--------|----------|------|-------------|
+| TB-1 | Source TB doesn't balance | Debits 71,072,200.00 vs credits 71,077,000.00 at face value: **−4,800.00** (the seeded "unbalanced after FX rounding") | Critical | `LEDGER_BALANCED` (BLOCK); proposed `SYS-SUSPENSE` |
+| TB-2 | Translation creates an imbalance with no offset | TB balances only at face value; translating EUR/GBP cash adds **181,900.30** (EUR 78,413.00, GBP 103,487.30) | Critical | `LEDGER_BALANCED`; proposed `SYS-FX`; question Q1 |
+| TB-3 | Duplicate account rows | `6310` on rows 48 (245,000.00) and 49 (38,500.00) | Medium | `TB_DUPLICATE_ROWS` (summed, flagged) |
+| TB-4 | Orphan account not in COA | `9999 Suspense - Unmapped`, 12,400.00 debit | High | `TB_ACCOUNTS_MAPPED`; BS suspense line |
+| TB-5 | Suspense account in use at all | 9999 implies an unposted or misposted transaction upstream | High | Same; investigation item (Q8) |
+| TB-6 | Multi-currency rows for one account | `1110` has USD, EUR and GBP rows (2, 3, 4) | Medium | Translated row by row; lineage shows each rate |
+| TB-7 | Fewer accounts than described | The brief says ~80 accounts; the file has 62 rows / 59 codes | Low | Noted |
 
-| ID | Defect | Evidence | Severity | Handling |
-|----|--------|----------|----------|----------|
-| COA-1 | Ambiguous CF category | `1150 Other Current Assets` = `TBD` | Medium | Default to Operating; flag reviewer |
-| COA-2 | Ambiguous CF category | `2170 Intercompany Payable` = `TBD` | Medium | Default to Financing; flag reviewer |
-| COA-3 | Header with no children | `1290 Other Assets` | Low | Signals incomplete COA |
-| COA-4 | Missing normal balance | `7000 Non-Operating Items` (Header) | Low | Header nodes don't post; no impact |
+## B. Chart of accounts (`chart_of_accounts.csv`)
 
-## C. Manual Adjustments (`manual_adjustments.json`)
+| ID | Defect | Evidence | Sev. | Surfaced as |
+|----|--------|----------|------|-------------|
+| COA-1 | Ambiguous cash-flow category | `1150 Other Current Assets` = `TBD` | Medium | `COA_STRUCTURE`; Q11 |
+| COA-2 | Ambiguous cash-flow category | `2170 Intercompany Payable` = `TBD` | Medium | `COA_STRUCTURE`; Q11 |
+| COA-3 | Header with no children | `1290 Other Assets` | Low | `COA_STRUCTURE` |
+| COA-4 | Missing normal balance | `7000 Non-Operating Items` | Low | `COA_STRUCTURE` |
+| COA-5 | Postable accounts used as parents | `3300 Accumulated OCI` (parent of 3310), `8000 Income Tax Expense` (parent of 8100, 8200) | Low | `COA_STRUCTURE`; Q12 |
+| COA-6 | Contra accounts typed by section, not by sign | `1121`, `1211`, `1221` are `Asset` with **Credit** normal balance; `3400` Equity/Debit; `4200` Revenue/Debit | High | Presented negative (sign keyed on type); `COA_STRUCTURE`. This trap caused the original sign bug |
 
-| ID | Defect | Evidence | Severity | Handling |
-|----|--------|----------|----------|----------|
-| JE-1 | Debits ≠ Credits | `JE-002`: 28,500 vs 25,000 (Δ 3,500) | High | **Reject** with explanation |
-| JE-2 | Account not in COA | `JE-005` references `6315` | High | **Quarantine** until mapped |
-| JE-3 | Circular intercompany entry | `JE-008` debits and credits `2170` for same 320,000 | High | **Reject** — no economic substance |
-| JE-4 | Imbalanced reclassification | `JE-002` intends 25,000 but debits 28,500 | Medium | Cannot auto-correct; return to preparer |
+## C. Manual adjustments (`manual_adjustments.json`)
 
-## D. FX Rates (`fx_rates.csv`)
+| ID | Defect | Evidence | Sev. | Surfaced as |
+|----|--------|----------|------|-------------|
+| JE-1 | Debits ≠ credits | `JE-002`: 28,500.00 vs 25,000.00 (Δ 3,500.00) | High | **REJECTED**, with plain-English reason |
+| JE-2 | Account not in COA | `JE-005` debits `6315` ("Conf travel") | High | **QUARANTINED** until mapped |
+| JE-3 | Circular intercompany entry | `JE-008` debits and credits `2170` for 320,000.00; every account nets to zero | High | **REJECTED** |
+| JE-4 | Entry duplicates a system process | `JE-003` revalues EUR cash via 7310, which the pipeline already translates at the period-end rate: double count | High | **QUARANTINED** for a reviewer |
+| JE-5 | Description contradicts the lines | `JE-005` says "reclass … *from* old code", but moves 18,500 *out of* 6310 *into* the unknown 6315. Mapping 6315 → 6310 would make it a no-op | Medium | Warning in the JE reason when that mapping is suggested |
 
-| ID | Defect | Evidence | Severity | Handling |
-|----|--------|----------|----------|----------|
-| FX-1 | Missing GBP period-end rate | Only GBP average + opening present | High | Fall back to opening; flag as estimated |
-| FX-2 | No USD opening rate row | USD functional; rate = 1.0 implicit | Low | Document assumption |
+## D. FX rates (`fx_rates.csv`)
 
-## E. Cross-file / Prior Period (`prior_period_tb.csv`)
+| ID | Defect | Evidence | Sev. | Surfaced as |
+|----|--------|----------|------|-------------|
+| FX-1 | Missing GBP period-end rate | Only GBP average (1.264) and opening (1.251) | High | Falls back to opening (point-in-time); swing **5,359.90** vs materiality 365,162.00 → `FX_ESTIMATES` (REVIEW) |
+| FX-2 | No USD opening row | USD is functional; rate 1.0 implicit | Low | No impact |
+| FX-3 | JE-003's amount contradicts the TB | 11,200 / 825,400 implies a EUR carrying rate of ~1.0814; the TB only balances if EUR is carried at face value | Medium | Q1 |
 
-| ID | Defect | Evidence | Severity | Handling |
-|----|--------|----------|----------|----------|
-| X-1 | Renamed account across periods | Prior has `6905`, current has `6900` | Medium | Map prior → current via Mapper |
-| X-2 | Prior missing detailed PL accounts | No revenue/expense detail beyond 6905 | Medium | Comparatives partial; disclose |
-| X-3 | Prior references account not in current COA | `6905` | Medium | Same as X-1 |
-| X-4 | Current has account not in prior | `9999` | Low | Expected — new suspense account |
+## E. Prior period and cross-file (`prior_period_tb.csv`)
 
-## F. Handling Strategy
+| ID | Defect | Evidence | Sev. | Surfaced as |
+|----|--------|----------|------|-------------|
+| X-1 | Renamed account across periods | Prior `6905 Sundry Operating Expenses` → current `6900 Other Operating Expenses` | Medium | `PRIOR_ACCOUNTS_MAPPED`; suggested at 0.816, approved in the review file |
+| X-2 | Prior TB doesn't balance | Out by **2,832,800.00** at face value; P&L detail missing except 6905 | High | `PRIOR_TB_BALANCED` |
+| X-3 | Retained earnings don't roll forward | Current opening RE 7,240,000.00 vs prior 5,180,000.00. Even inferring prior net income (~2,700,800.00), opening RE is **640,800.00** short | High | `RE_ROLLFORWARD`; blocks the SOCIE; Q3 |
+| X-4 | FX reserve moved with no OCI source | `3310` 95,000 → 180,000 | Medium | SOCIE design note (architecture §9) |
+| X-5 | New account vs prior | `9999` appears only in the current period | Low | Expected: new suspense |
 
-Every defect maps to one of four outcomes:
+## Handling strategy
 
-- **Auto-handle:** FX fallback, currency translation, exact mappings
-- **Flag-and-continue:** duplicate rows, ambiguous CF, header anomalies
-- **Quarantine:** orphan accounts, JEs with unmapped accounts
-- **Reject:** imbalanced JEs, circular IC entries
-
-No defect is silently absorbed. Every one surfaces in the run log or in
-`output/validation_findings.json`.
+| Outcome | Applies to | Rule |
+|---|---|---|
+| **Auto-handle** | Exact mappings, translation, contra presentation, duplicate rows (summed) | Deterministic, logged in lineage |
+| **Flag and continue** (REVIEW) | Estimated rates, duplicates, orphan below materiality, prior-period gaps, COA structure | Statements issuable after sign-off |
+| **Quarantine** | JEs with unknown accounts or that duplicate a system process | Held until a reviewer decides |
+| **Reject** | Unbalanced, circular, out-of-period or duplicate-ID entries | Returned to the preparer with the reason |
+| **Block** | Unbalanced ledger, missing rate, material orphan or estimate, stale approval, any lineage or identity failure | Drafts only, exit 2, proposed fixes |

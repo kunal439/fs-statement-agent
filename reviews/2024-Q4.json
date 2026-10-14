@@ -1,0 +1,42 @@
+{
+  "reviewer": "Demo Controller",
+  "reviewed_on": "2025-01-08",
+  "note": "Illustrative reviewer decisions that close the review loop for the demo. In production this file is written by the review UI, signed, and stored with the run. Approvals bind to exact amounts (a stale approval blocks the run); sign-offs bind to the finding's key from review_packet.md (a stale sign-off re-opens the item). Items this demo reviewer can't know the answer to are deliberately left open.",
+  "account_mappings": {
+    "6905": {
+      "coa_code": "6900",
+      "reason": "Prior-period 'Sundry Operating Expenses' was renamed 'Other Operating Expenses' in the current COA (same catch-all opex account)."
+    }
+  },
+  "je_decisions": {
+    "JE-002": {
+      "action": "reject",
+      "reason": "Returned to preparer: debit 28,500 vs credit 25,000. Confirm the reclass amount and resubmit."
+    },
+    "JE-003": {
+      "action": "reject",
+      "reason": "The pipeline remeasures EUR cash at the period-end rate; posting this entry as well would double-count."
+    },
+    "JE-008": {
+      "action": "reject",
+      "reason": "Placeholder IC settlement with no counter-leg. IC team to repost against cash once the UK sub confirms."
+    }
+  },
+  "sign_offs": {
+    "FX_ESTIMATES": {
+      "fingerprint": "8cfbb78147e6",
+      "reason": "The 5,359.90 swing across available GBP rates is about 1.5% of materiality. Accept the opening-rate estimate for this close; treasury to supply the period-end rate."
+    }
+  },
+  "approved_entries": {
+    "SYS-FX": {
+      "account": "7310",
+      "amount": "181900.30",
+      "reason": "USD functional currency: EUR/GBP cash are monetary items, so remeasurement goes to P&L (ASC 830-20 / IAS 21). Demo assumes the answer to questions.md Q1 is 'the ERP carried these rows at face value'."
+    },
+    "SYS-SUSPENSE": {
+      "amount": "4800.00",
+      "reason": "Source TB difference below materiality. Parked in suspense; ERP export ticket raised."
+    }
+  }
+}

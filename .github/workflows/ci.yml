@@ -1,0 +1,19 @@
+name: ci
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - run: python -m unittest discover -s tests -v
+      - name: Committed outputs are reproducible (idempotency)
+        run: |
+          python src/pipeline.py || test $? -eq 2   # raw run is BLOCKED by design: exit 2
+          python src/pipeline.py --review reviews/2024-Q4.json --output output/reviewed
+          git diff --exit-code -- output/
+      - run: docker build -t fs-statement-agent .

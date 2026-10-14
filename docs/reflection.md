@@ -1,94 +1,35 @@
 # Reflection
 
-## 1. What I would build differently with 3 months
+## 1. With 3 months instead of 8 hours
+- **Investigator agent** for suspense and exceptions: read-only GL tools, a step budget, findings rather than postings. It is the one place a real agent loop pays for itself.
+- **Review service** in place of a JSON file: signed decisions, preparer ≠ approver, four eyes above materiality, and approvals that become a versioned COA-alias table.
+- **Measure the mapper before trusting it:** label reviewer decisions, compare string match vs LLM precision per account type, and calibrate the LLM's self-reported confidence (today it is uncalibrated, which is one reason it never auto-applies).
+- **Cash flow and SOCIE**, which need a complete prior TB. Then multi-entity work: IC matching, CTA, restatements as a versioned layer.
 
-Three things, in priority order.
-
-**Lineage as a graph database, not a list of notes.** Right now lineage is a
-flat JSON array attached to FX translations. With time, I would store every
-statement cell, every transformation, and every source row as a node in a
-graph. The query would be: "show me every input that contributed to this
-line." Auditors need that traversal, not a static log.
-
-**A learning mapper.** The Mapper's fuzzy matching is deterministic — it works,
-but every re-run gives the same confidence. In production, every human override
-of a mapping becomes a training signal. After a few hundred overrides, a
-fine-tuned embedding model replaces the string-similarity heuristic entirely,
-and the LLM only handles genuinely novel cases.
-
-**Multi-entity consolidation.** The current pipeline is single-entity. Real
-groups need IC elimination matrices, minority interest, equity pickup, and
-currency translation adjustments that flow to OCI. That is where the design
-actually gets hard, and it is a different problem from the single-entity
-mapping and validation I built here.
-
-## 2. Where the prototype would break at scale
-
-**Fuzzy matching at 5,000 accounts.** The `name_similarity` function is O(n*m)
-per lookup. At 5,000 TB rows against a 3,000-account COA, that is 15 million
-comparisons per run. Needs a FAISS-style embedding index to stay under a second.
-
-**Concurrency.** Two finance users posting adjustments simultaneously would
-corrupt the balance dict. The current code is single-threaded batch processing.
-Production needs optimistic locking on the balances structure.
-
-**FX at 50 currencies.** The rate table is loaded into memory as a dict, and
-fallbacks are resolved by linear scan. At scale it needs a proper rate service
-with audit logging, version history, and support for multiple rate sources
-(Bloomberg, ECB, corporate treasury override).
-
-**The Auditor catches only what it was told to catch.** Every check in
-`CHECKS` is manual. At 5,000 accounts, a new class of failure emerges — an
-account that maps correctly but to the wrong sibling (e.g., a debit posted to
-`6200 Rent` instead of `6300 Marketing`). Catching that needs anomaly detection
-trained on historical posting patterns, which I did not design.
+## 2. Where it breaks at scale
+- **Mapper:** string similarity is O(TB × COA). At 5,000 × 3,000 it needs a retrieval index, and LLM calls need batching plus a cache keyed by account fingerprint.
+- **Reviewer bandwidth breaks first.** Six review items on 62 rows becomes thousands on a real ledger. Findings must be grouped by root cause and ranked by materiality, or the queue gets rubber-stamped.
+- **No entity dimension.** Consolidation needs per-entity runs feeding a layer that does IC matching (tolerances, ageing, disputes), CTA and minority interest, and handles different period ends.
+- **One process, in memory:** fine to about a million rows. Beyond that, partition by account and stream the lineage to a store instead of embedding it in JSON.
 
 ## 3. How I used AI tools
-
 **Where they helped:**
+- cross-referencing the five files to find defects (the 6905 → 6900 rename, the duplicate 6310 rows);
+- loaders and boilerplate;
+- pressure-testing the code/LLM boundary with "argue against using an LLM for X".
 
-- Finding the defect inventory. Claude cross-referenced the TB, COA, and
-  adjustments and surfaced the `6905 -> 6900` rename across periods and the
-  duplicate `6310` rows — things I would have missed on first read.
-- Boilerplate for the code. The dataclasses, CSV loaders, and JSON writers
-  were AI-generated and reviewed. Saved about two hours.
-- Stress-testing the architecture. I prompted with "argue against using an
-  LLM for X" to pressure-test the deterministic/agentic boundary.
+I used Claude Code for a final review pass, the refactor, the tests and the Docker setup. I read every change and made the accounting calls (what blocks, the FX policy, what a model may touch) myself.
 
 **Where they led me wrong:**
+- **Over-engineering:** my first architecture had seven agents, because the model happily designs a swarm when asked. Six of the seven wrapped arithmetic.
+- **FX fallback:** the model suggested the period-average rate for the missing GBP period-end rate. Average is a flow rate. I used the opening rate (last period's close, a point-in-time rate) and quantified what the choice is worth: 5,360 USD against materiality of 365,162.
+- **The sign bug.** AI-written sign logic keyed on `normal_balance`, so contra assets were *added* to assets, overstating them by 11.25M. When I chased it, the model proposed increasingly complex fixes, and I settled for "report the residual honestly". A later AI-assisted review decomposed the 11.41M residual: 98.6% of it was the bug. The lesson is that a verifier must *explain* its residual. `BS_IDENTITY` now blocks on any difference the ledger doesn't account for, and a test re-introduces the bug to prove it.
+- **Fuzzy matching:** `difflib` "mapped" Conf travel to COGS - Materials. That is why non-exact matches are only ever suggestions.
 
-- My first architecture draft had seven agents. The LLM happily designed a
-  swarm because that was the framing I gave it. I had to pull back to four
-  checkpoints plus a deterministic core. The assignment explicitly warns
-  against over-engineering, and the default LLM behavior is exactly that.
-- The LLM suggested using the period-average rate as a fallback for missing
-  period-end rates. That is wrong for balance-sheet revaluation — you use the
-  closing rate for BS items and average for PL items. I caught it in review.
-- When I hit a persistent sign-convention bug in the balance sheet builder,
-  the LLM kept suggesting increasingly complex fixes. The actual resolution was
-  simpler: the design intent (report the residual honestly as a validation
-  failure) was already the correct answer, not the balanced sheet I was
-  chasing.
+## 4. What I think is underestimated
+**Knowing what *state* each input is in matters more than mapping it.** In this small bundle:
+- the TB balances only if EUR and GBP amounts are read at face value, so either they aren't really EUR and GBP, or 181,900 of remeasurement was never booked;
+- JE-003 recomputes a revaluation the ledger may or may not already contain;
+- the prior TB looks pre-close, and retained earnings don't roll by 640,800.
 
-## 4. What I think the assignment underestimates
-
-**Intercompany elimination is a matching problem, not a netting problem.**
-
-The seeded defect `JE-008` is obvious — a circular entry that nets to zero on
-one account. Real IC elimination is harder. Entity A's IC receivable must match
-Entity B's IC payable, and in multi-currency groups they rarely match exactly
-because of timing differences, FX rate differences, disputed invoices, and
-different fiscal calendars. The elimination engine needs tolerance thresholds,
-ageing analysis, and a reconciliation workflow that routes mismatches to the
-right entity controller.
-
-That is roughly 40% of consolidation effort in real finance teams, and it is
-essentially invisible in this mock data. A submission that only handles
-single-entity mapping and single-JE validation, however well-executed, is
-solving the easy half of the problem.
-
-The second underestimate: the COA is a living document. Accounts get renamed,
-merged, split, and deprecated. The mapping problem is not "map TB to COA" —
-it is "map TB to COA *version* and reconcile COA versions across periods."
-The `6905 -> 6900` rename is the simplest case. Real ERPs have COA change
-logs with effective dates, and the pipeline has to respect them.
+No model can answer these from the files; only the ERP's data dictionary and the controller can. A pipeline that guesses produces clean-looking statements that are wrong by six figures. The product is the system that notices, quantifies and asks, and then remembers the answer.

@@ -4,3 +4,5 @@ venv/
 .venv/
 .DS_Store
 .pytest_cache/
+# the assignment brief belongs to the hiring company; not redistributed
+AI_Agentic_Engineer_Assignment.pdf

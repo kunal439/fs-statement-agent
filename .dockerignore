@@ -1,0 +1,10 @@
+.git
+.github
+.venv
+venv
+output
+docs
+**/__pycache__
+**/*.pyc
+*.pdf
+.DS_Store

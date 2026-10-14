@@ -1,0 +1,36 @@
+{
+  "run_id": "dab528f778f6",
+  "period": "2024-Q4",
+  "status": "BLOCKED",
+  "exit_code": 2,
+  "inputs_sha256": {
+    "chart_of_accounts.csv": "093275cdd8513d915d42a63262a96e38177129d95f65de4cadd2dab58bdf6033",
+    "trial_balance.csv": "c1f121388aa85a77d737339e25b8e6e6798498e018657fb85e024200f4a44555",
+    "prior_period_tb.csv": "3b81c410569480e623130ee794125f8fd306967ee7cb3e7f286635f9eccc6446",
+    "fx_rates.csv": "93aca603be3c63ce1f41e4a26b93073902af406eef9318e40ca279552e67e5eb",
+    "manual_adjustments.json": "26fcad0c0c7bda5306efea47e0c73238b2828b5d30afdd1bb0d54bb6a6704a0f"
+  },
+  "review_file": null,
+  "code_sha256": {
+    "llm.py": "e70db56185704c2b7f19b7de9023ca1ac7344c6b09bb92588f6ad5ed0940bce3",
+    "pipeline.py": "5912c50456fe1f8ffd448413ec2e7ff9c9ac5c8320bb712c2c6a5d8d80a361e9",
+    "trace.py": "373eca9309d1973d8216f59dba3df2147abe31e2ff598086c7b9cabd58b8de7d"
+  },
+  "llm_model": null,
+  "config": {
+    "functional_currency": "USD",
+    "materiality_pct_of_assets": "0.01",
+    "materiality": "365162.00",
+    "suggest_min_score": 0.6
+  },
+  "outputs": [
+    "adjustments.json",
+    "balance_sheet.json",
+    "mappings.json",
+    "profit_and_loss.json",
+    "review_packet.md",
+    "run_log.txt",
+    "run_manifest.json",
+    "validation_findings.json"
+  ]
+}
